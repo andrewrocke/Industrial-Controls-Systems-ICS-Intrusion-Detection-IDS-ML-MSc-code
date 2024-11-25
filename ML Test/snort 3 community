@@ -1,0 +1,1 @@
+sudo ./snort -c /home/kali/snort3/lua/snort.lua -r ~/left.pcap -R /home/kali/snort3-community-rules/snort3-community.rules
