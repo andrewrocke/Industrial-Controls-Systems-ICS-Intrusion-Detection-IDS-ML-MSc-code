@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="0 <= 1678441024.0\nsamples = 100.0%\nvalue = [0.015, 0.985]", fillcolor="#3c9ee5"] ;
+1 [label="0 <= 1678440896.0\nsamples = 7.4%\nvalue = [0.194, 0.806]", fillcolor="#69b5eb"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="16 <= 99851235.062\nsamples = 5.1%\nvalue = [0.084, 0.916]", fillcolor="#4ba6e7"] ;
+1 -> 2 ;
+3 [label="(...)", fillcolor="#C0C0C0"] ;
+2 -> 3 ;
+34 [label="(...)", fillcolor="#C0C0C0"] ;
+2 -> 34 ;
+37 [label="2 <= 413.345\nsamples = 2.3%\nvalue = [0.438, 0.562]", fillcolor="#d3e9f9"] ;
+1 -> 37 ;
+38 [label="(...)", fillcolor="#C0C0C0"] ;
+37 -> 38 ;
+79 [label="(...)", fillcolor="#C0C0C0"] ;
+37 -> 79 ;
+86 [label="16 <= 3510.104\nsamples = 92.6%\nvalue = [0.001, 0.999]", fillcolor="#399de5"] ;
+0 -> 86 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+87 [label="4 <= 0.0\nsamples = 43.4%\nvalue = [0.003, 0.997]", fillcolor="#3a9de5"] ;
+86 -> 87 ;
+88 [label="(...)", fillcolor="#C0C0C0"] ;
+87 -> 88 ;
+89 [label="(...)", fillcolor="#C0C0C0"] ;
+87 -> 89 ;
+96 [label="samples = 49.2%\nvalue = [0.0, 1.0]", fillcolor="#399de5"] ;
+86 -> 96 ;
+}
