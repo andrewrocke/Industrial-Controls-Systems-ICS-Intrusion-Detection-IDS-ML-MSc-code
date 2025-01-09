@@ -1,0 +1,49 @@
+model = RandomForestClassifier(n_estimators=25, random_state=42, max_depth=20)
+
+Accuracy: 0.9050966608084359
+Precision: 0.9276393831553974
+Recall: 0.8856172140430351
+ROC
+AUC - ROC Score: 0.97
+F1 Score: 0.91
+
+model = RandomForestClassifier(n_estimators=25, random_state=42, max_depth=100)
+
++++++++++++++++++ RF Model +++++++++++++++++++
+Accuracy: 0.9179847685998829
+Precision: 0.919774011299435
+Recall: 0.9218573046432617
+ROC
+AUC - ROC Score: 0.98
+F1 Score: 0.92
+
+model = RandomForestClassifier(n_estimators=100, random_state=42, max_depth=100)
+
++++++++++++++++++ RF Model +++++++++++++++++++
+Accuracy: 0.9168131224370241
+Precision: 0.9205448354143019
+Recall: 0.9184597961494904
+ROC
+AUC - ROC Score: 0.98
+F1 Score: 0.92
+CM
+
+model = RandomForestClassifier(n_estimators=200, random_state=42, max_depth=100)
++++++++++++++++++ RF Model +++++++++++++++++++
+Accuracy: 0.9185705916813123
+Precision: 0.9217687074829932
+Recall: 0.9207248018120046
+ROC
+AUC - ROC Score: 0.98
+F1 Score: 0.92
+CM
+
+model = RandomForestClassifier(n_estimators=25, random_state=42, max_depth=200)
+
++++++++++++++++++ RF Model +++++++++++++++++++
+Accuracy: 0.9179847685998829
+Precision: 0.919774011299435
+Recall: 0.9218573046432617
+ROC
+AUC - ROC Score: 0.98
+F1 Score: 0.92

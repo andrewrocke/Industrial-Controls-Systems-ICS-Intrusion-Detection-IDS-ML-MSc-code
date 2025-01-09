@@ -15,20 +15,26 @@ from IPython.display import display
 import graphviz
 
 #deleted the strings (IP & MAC in this dataset to get it to run)
-ds = pd.read_csv("ML Test/output_left_singlelabel_add_del.csv")
+ds = pd.read_csv("ML Test/output_left_singlelabel_add_del_NST.csv")
 print("total dataframe :",ds.shape)
 
 data = ds.values
 #ds['sAddress'] = ipaddress.ip_address(ds['sAddress'])
 X, y = data[:,:-1], data[:, -1]
-print(X.shape, y.shape)
+print("x data, y data", X.shape, y.shape)
 #https://stackoverflow.com/questions/59023756/convert-ip-address-to-integer-in-pandas
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=1)
-print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
+print("xtrain", X_train.shape, "xtest",X_test.shape,"ytrain", y_train.shape, "ytest",y_test.shape)
 
 X_train_ds = pd.DataFrame(X_train)
-
+X_test_ds = pd.DataFrame(X_test)
+y_train_ds = pd.DataFrame(y_train)
+y_test_ds = pd.DataFrame(y_test)
+print("xtrain", X_train_ds.head())
+print("xtest", X_test_ds.head())
+print("ytrain", y_train_ds.head())
+print("ytest", y_test_ds.head())
 #train_ds = pd.read_csv("train_ds.csv")
 #test_ds = pd.read_csv("test_ds.csv")
 #X=ds['sAddress','rAddress']
@@ -39,8 +45,8 @@ X_train_ds = pd.DataFrame(X_train)
                           #train_size=0.8, shuffle=True)
 
 
-random_forest = RandomForestClassifier(n_estimators=25, random_state=42)
-random_forest.fit(X_train, y_train)
+model = RandomForestClassifier(n_estimators=25, random_state=42, max_depth=200)
+model.fit(X_train, y_train)
 
 
 
@@ -49,7 +55,7 @@ random_forest.fit(X_train, y_train)
 ## Split the data into features (X) and target (y) need to do this here.
 
 #random_forest.fit(X_train_ds, y_train_ds)
-y_pred = random_forest.predict(X_test)
+y_pred = model.predict(X_test)
 
 print("+++++++++++++++++ RF Model +++++++++++++++++++")
 accuracy = accuracy_score(y_test, y_pred)
@@ -61,7 +67,7 @@ print("Precision:", precision)
 print("Recall:", recall)
 
 for i in range(3):
-    tree = random_forest.estimators_[i]
+    tree = model.estimators_[i]
     dot_data = export_graphviz(tree,
                                feature_names=X_train_ds.columns,  
                                filled=True,  
@@ -76,7 +82,7 @@ graph.render(filename='RF.dot')
 print("ROC")
 #https://www.geeksforgeeks.org/how-to-plot-roc-curve-in-python/
 #fpr, tpr, thresholds = roc_curve(y_test, y_pred)
-y_proba = random_forest.predict_proba(X_test)[:,1]
+y_proba = model.predict_proba(X_test)[:,1]
 roc_auc = roc_auc_score(y_test, y_proba)
 f1 = f1_score(y_test, y_pred)
 print (f"AUC - ROC Score: {roc_auc:.2f}")
