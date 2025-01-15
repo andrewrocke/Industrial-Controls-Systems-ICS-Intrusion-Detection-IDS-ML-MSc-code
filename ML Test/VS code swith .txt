@@ -1,0 +1,14 @@
+Under the View menu select Command Palette... F1 (or press F1 key).
+
+Type Python: Select Interpreter.
+
+Choose which Python version to use by default [1].
+
+
+
+https://saturncloud.io/blog/how-to-pip-install-an-old-version-of-tensorflow/#3
+pip install tensorflow==1.15.0
+
+
+https://discuss.ai.google.dev/t/cant-import-tensorflow-decision-forests-getting-notfounderror/32271/11
+pip install tf_keras 

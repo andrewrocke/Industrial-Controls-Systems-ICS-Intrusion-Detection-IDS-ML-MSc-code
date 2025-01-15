@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 
 
-ds = pd.read_csv("ML Test/output_left_singlelabel.csv")
+ds = pd.read_csv("ML Test/output_left_singlelabel_add_del_NST.csv")
 print("total dataframe :",ds.shape)
 #X=ds['sAddress','rAddress']
 #y= ds['IT_B_Label']
@@ -34,7 +34,7 @@ print("test_ds count :" , len(test_ds))
 print("train_ds :" ,train_ds.head(5))
 #test_ds = pd.read_csv("ML Test/output_left.csv")
 print("test_ds :" ,test_ds.head(5))
-model = ydf.GradientBoostedTreesLearner(label="IT_B_Label").train(train_ds)
+model = ydf.GradientBoostedTreesLearner(label="NST_B_Label").train(train_ds)
 model.describe()
 print(model.evaluate(test_ds))
 #print(model.benchmark(test_ds))

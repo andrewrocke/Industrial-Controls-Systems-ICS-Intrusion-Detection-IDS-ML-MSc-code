@@ -1,8 +1,10 @@
 import ydf
 import numpy as np
 import pandas as pd
+import tensorflow as tf
 from sklearn.model_selection import train_test_split
-
+import tensorflow as tf
+import tensorflow_decision_forests as tfdf
 
 
 
@@ -24,7 +26,7 @@ print("train_ds :" ,train_ds.head(5))
 print("test_ds :" ,test_ds.head(5))
 #model = ydf.GradientBoostedTreesLearner(label="IT_B_Label").train(train_ds)
 #model.describe()
-learner = ydf.RandomForestLearner(label="IT_B_Label",
+learner = ydf.RandomForestLearner(label="NST_B_Label",
                                   compute_oob_performances=True)
 
 model = learner.train(train_ds)
@@ -36,5 +38,19 @@ print(model.evaluate(test_ds))
 #print(model.benchmark(test_ds))
 #model.analyze(test_ds, sampling=0.1)
 model.save("my_RF_model")
+# 
+# Save Model 
+# https://ydf.readthedocs.io/en/latest/tutorial/tf_serving/
 
-loaded_model = ydf.load_model("my_RF_model")
+model.to_tensorflow_saved_model("tf_model", mode="tf")
+
+#model.export('model') 
+
+#converter = tf.lite.TFLiteConverter.from_saved_model('model') 
+
+#snort_model = converter.convert() 
+
+#with open('snort.model', 'wb') as f: 
+ #   f.write(snort_model) 
+
+#loaded_model = ydf.load_model("my_RF_model")

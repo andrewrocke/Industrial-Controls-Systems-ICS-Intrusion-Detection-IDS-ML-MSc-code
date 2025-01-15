@@ -1,0 +1,19 @@
+Colab RF working 
+
+
+
+!python --version
+Python 3.10.12
+
+
+!pip list | grep tensorflow
+
+
+tensorflow                         2.18.0
+tensorflow-datasets                4.9.7
+tensorflow_decision_forests        1.11.0
+tensorflow-hub                     0.16.1
+tensorflow-io-gcs-filesystem       0.37.1
+tensorflow-metadata                1.13.1
+tensorflow-probability             0.24.0
+tensorflowjs                       4.22.0

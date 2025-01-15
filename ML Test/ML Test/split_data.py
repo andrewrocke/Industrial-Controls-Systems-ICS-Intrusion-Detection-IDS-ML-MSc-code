@@ -5,8 +5,10 @@ import pandas as pd
 
 
 
-ds = pd.read_csv("ML Test/output_left_singlelabel.csv")
+ds = pd.read_csv("ML Test/output_left_singlelabel_add_del_NST.csv")
 print("total dataframe :",ds.shape)
+print(list(ds))
+print(ds.head())
 #X=ds['sAddress','rAddress']
 #y= ds['IT_B_Label']
 

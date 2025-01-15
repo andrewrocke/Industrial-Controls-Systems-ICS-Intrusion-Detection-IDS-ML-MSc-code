@@ -1,0 +1,47 @@
+total dataframe : (8533, 52)
+['start', 'end', 'startOffset', 'endOffset', 'duration', 'sPackets', 'rPackets', 'sBytesSum', 'rBytesSum', 'sBytesMax', 'rBytesMax', 'sBytesMin', 'rBytesMin', 'sBytesAvg', 'rBytesAvg', 'sLoad', 'rLoad', 'sPayloadSum', 'rPayloadSum', 'sPayloadMax', 'rPayloadMax', 'sPayloadMin', 'rPayloadMin', 'sPayloadAvg', 'rPayloadAvg', 'sInterPacketAvg', 'rInterPacketAvg', 'sttl', 'rttl', 'sAckRate', 'rAckRate', 'sUrgRate', 'rUrgRate', 'sFinRate', 'rFinRate', 'sPshRate', 'rPshRate', 'sSynRate', 'rSynRate', 'sRstRate', 'rRstRate', 'sWinTCP', 'rWinTCP', 'sFragmentRate', 'rFragmentRate', 'sAckDelayMax', 'rAckDelayMax', 'sAckDelayMin', 'rAckDelayMin', 'sAckDelayAvg', 'rAckDelayAvg', 'NST_B_Label']
+        start         end  startOffset  endOffset  duration  sPackets  \
+0  1678440574  1678440574     0.000000   0.000004  0.000005         4   
+1  1678440575  1678440575     1.023529   1.023533  0.000005         4   
+2  1678440576  1678440576     2.047534   2.047539  0.000006         4   
+3  1678440580  1678440580     6.143809   6.143813  0.000005         4   
+4  1678440581  1678440581     7.167439   7.167443  0.000005         4   
+
+   rPackets  sBytesSum  rBytesSum  sBytesMax  ...  rWinTCP  sFragmentRate  \
+0         0        240          0       60.0  ...      NaN            NaN   
+1         0        240          0       60.0  ...      NaN            NaN   
+2         0        240          0       60.0  ...      NaN            NaN   
+3         0        240          0       60.0  ...      NaN            NaN   
+4         0        240          0       60.0  ...      NaN            NaN   
+
+   rFragmentRate  sAckDelayMax  rAckDelayMax  sAckDelayMin  rAckDelayMin  \
+0            NaN           NaN           NaN           NaN           NaN   
+1            NaN           NaN           NaN           NaN           NaN   
+2            NaN           NaN           NaN           NaN           NaN   
+3            NaN           NaN           NaN           NaN           NaN   
+4            NaN           NaN           NaN           NaN           NaN   
+
+   sAckDelayAvg  rAckDelayAvg  NST_B_Label  
+0           NaN           NaN            0  
+1           NaN           NaN            0  
+2           NaN           NaN            0  
+3           NaN           NaN            0  
+4           NaN           NaN            0  
+
+[5 rows x 52 columns]
+Use /tmp/tmpn04vkp1h as temporary training directory
+134/134 [==============================] - 1s 3ms/step
+Accuracy: 0.47
+Warning: The model was called directly (i.e. using `model(data)` instead of using `model.predict(data)`) before being trained. The model will only return zeros until trained. The output shape might change after training Tensor("inputs:0", shape=(1, 1024), dtype=float32)
+WARNING:absl:The model was called directly (i.e. using `model(data)` instead of using `model.predict(data)`) before being trained. The model will only return zeros until trained. The output shape might change after training Tensor("inputs:0", shape=(1, 1024), dtype=float32)
+Warning: The model was called directly (i.e. using `model(data)` instead of using `model.predict(data)`) before being trained. The model will only return zeros until trained. The output shape might change after training Tensor("inputs:0", shape=(1, 1024), dtype=float32)
+WARNING:absl:The model was called directly (i.e. using `model(data)` instead of using `model.predict(data)`) before being trained. The model will only return zeros until trained. The output shape might change after training Tensor("inputs:0", shape=(1, 1024), dtype=float32)
+Saved artifact at 'model'. The following endpoints are available:
+
+* Endpoint 'serve'
+  inputs (POSITIONAL_OR_KEYWORD): TensorSpec(shape=(1, 1024), dtype=tf.float32, name=None)
+  training (POSITIONAL_OR_KEYWORD): Literal[False]
+Output Type:
+  TensorSpec(shape=(1, 1), dtype=tf.float32, name=None)
+Captures:
+  None

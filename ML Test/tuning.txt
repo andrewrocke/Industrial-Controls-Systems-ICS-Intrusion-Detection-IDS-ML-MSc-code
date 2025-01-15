@@ -47,3 +47,121 @@ Recall: 0.9218573046432617
 ROC
 AUC - ROC Score: 0.98
 F1 Score: 0.92
+
+
+
+
+Accuracy: 0.955023  CI95[W][0 1]
+ErrorRate: : 0.0449775
+
+
+Confusion Table:
+truth\prediction
+         0    1
+    0  302    9
+    1   21  335
+Total: 667
+
+test_train_left.py
+model = ydf.GradientBoostedTreesLearner(label="NST_B_Label").train(train_ds)
+
+I0000 00:00:1736598047.770778   10060 abstract_model.cc:1404] Engine "GradientBoostedTreesQuickScorerExtended" built
+accuracy: 0.963006
+confusion matrix:
+    label (row) \ prediction (col)
+    +-----+-----+-----+
+    |     |   0 |   1 |
+    +-----+-----+-----+
+    |   0 | 754 |  23 |
+    +-----+-----+-----+
+    |   1 |  41 | 912 |
+    +-----+-----+-----+
+characteristics:
+    name: '1' vs others
+    ROC AUC: 0.995184
+    PR AUC: 0.99655
+    Num thresholds: 990
+loss: 0.0876342
+num examples: 1730
+num examples (weighted): 1730
+
+
+create data with split_data.py
+
+cretae CSVs
+
+
+model = ydf.GradientBoostedTreesLearner(label="NST_B_Label").train(train_ds)
+test_train_GMB.py
+
++++++++++++++++++ GMB Model +++++++++++++++++++
+I0000 00:00:1736598772.287833    9248 abstract_model.cc:1404] Engine "GradientBoostedTreesQuickScorerExtended" built
+accuracy: 0.999238
+confusion matrix:
+    label (row) \ prediction (col)
+    +------+------+------+
+    |      |    0 |    1 |
+    +------+------+------+
+    |    0 |   22 |    0 |
+    +------+------+------+
+    |    1 |    1 | 1289 |
+    +------+------+------+
+characteristics:
+    name: '1' vs others
+    ROC AUC: 0.999965
+    PR AUC: 0.999999
+    Num thresholds: 52
+loss: 0.00300489
+num examples: 1312
+num examples (weighted): 1312
+
+test_train_RF.py
++++++++++++++++++ RF Model +++++++++++++++++++
+I0000 00:00:1736599613.620094   31732 decision_forest.cc:762] Model loaded with 300 root(s), 65818 node(s), and 45 input feature(s).
+I0000 00:00:1736599613.620713   31732 abstract_model.cc:1404] Engine "RandomForestOptPred" built
+accuracy: 0.931412
+confusion matrix:
+    label (row) \ prediction (col)
+    +-----+-----+-----+
+    |     |   0 |   1 |
+    +-----+-----+-----+
+    |   0 | 800 |  15 |Under the View menu select Command Palette... F1 (or press F1 key).
+
+Type Python: Select Interpreter.
+
+Choose which Python version to use by default [1].
+    +-----+-----+-----+
+    |   1 | 104 | 816 |
+    +-----+-----+-----+
+characteristics:
+    name: '1' vs others
+    ROC AUC: 0.985726
+    PR AUC: 0.988507
+    Num thresholds: 178
+loss: 0.198203
+num examples: 1735
+num examples (weighted): 1735
+
+
+test_train_GMB.py on same split as above 
+
++++++++++++++++++ GMB Model +++++++++++++++++++
+I0000 00:00:1736599917.895577   26952 abstract_model.cc:1404] Engine "GradientBoostedTreesQuickScorerExtended" built
+accuracy: 0.960807
+confusion matrix:
+    label (row) \ prediction (col)
+    +-----+-----+-----+
+    |     |   0 |   1 |
+    +-----+-----+-----+
+    |   0 | 792 |  23 |
+    +-----+-----+-----+
+    |   1 |  45 | 875 |
+    +-----+-----+-----+
+characteristics:
+    name: '1' vs others
+    ROC AUC: 0.994596
+    PR AUC: 0.995635
+    Num thresholds: 1023
+loss: 0.0945099
+num examples: 1735
+num examples (weighted): 1735

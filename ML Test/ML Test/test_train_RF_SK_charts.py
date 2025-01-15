@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 from sklearn.tree import export_graphviz
 from IPython.display import display
 import graphviz
+import joblib
 
 #deleted the strings (IP & MAC in this dataset to get it to run)
 ds = pd.read_csv("ML Test/output_left_singlelabel_add_del_NST.csv")
@@ -124,4 +125,7 @@ plt.savefig('plots.jpg')
 
 plt.show()
 
+#https://mljar.com/blog/save-load-random-forest/
+# save
+joblib.dump(model, "my_RF_SK_model.joblib")
 
