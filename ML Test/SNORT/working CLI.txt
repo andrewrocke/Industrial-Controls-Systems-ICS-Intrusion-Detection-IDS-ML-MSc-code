@@ -1,0 +1,2 @@
+┌──(kali㉿kali)-[~/snort3/build/src]
+└─$ sudo ./snort -c /home/kali/snort3/lua/snort.lua -r ~/left.pcap -R /home/kali/snort3-community-rules/snort3-community.rules -A alert_json -l /var/log/snort --lua "alert_json = {file = true}"
