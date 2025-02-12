@@ -1,0 +1,1020 @@
+2025-02-12 19:16:43.383512: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-12 19:16:48.236672: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+train_ds count : 3798
+test_ds count : 922
+train_ds :    Unnamed: 0         start           end  startOffset  endOffset  duration  ...  rAckDelayMax  sAckDelayMin  rAckDelayMin  sAckDelayAvg  rAckDelayAvg  NST_B_Label
+0           0  1.678441e+09  1.678441e+09     0.000000   0.000002  0.000003  ...           NaN           NaN           NaN           NaN           NaN            0
+1           1  1.678441e+09  1.678441e+09     1.023529   1.023531  0.000003  ...           NaN           NaN           NaN           NaN           NaN            0
+2           2  1.678441e+09  1.678441e+09     2.047535   2.047537  0.000003  ...           NaN           NaN           NaN           NaN           NaN            0
+3           3  1.678441e+09  1.678441e+09     6.143809   6.143811  0.000003  ...           NaN           NaN           NaN           NaN           NaN            0
+4           4  1.678441e+09  1.678441e+09     7.167440   7.167442  0.000003  ...           NaN           NaN           NaN           NaN           NaN            0
+
+[5 rows x 53 columns]
+test_ds :    Unnamed: 0         start           end  startOffset  endOffset  duration  ...  rAckDelayMax  sAckDelayMin  rAckDelayMin  sAckDelayAvg  rAckDelayAvg  NST_B_Label
+0           8  1.678441e+09  1.678441e+09    14.335212  14.335213  0.000002  ...           NaN           NaN           NaN           NaN           NaN            0
+1           9  1.678441e+09  1.678441e+09     6.469344   6.469344  0.000001  ...           NaN           NaN           NaN           NaN           NaN            0
+2          17  1.678441e+09  1.678441e+09    18.469587  18.469587  0.000001  ...           NaN           NaN           NaN           NaN           NaN            0
+3          25  1.678441e+09  1.678441e+09    38.910557  38.910558  0.000002  ...           NaN           NaN           NaN           NaN           NaN            0
+4          28  1.678441e+09  1.678441e+09    45.054395  45.054396  0.000002  ...           NaN           NaN           NaN           NaN           NaN            0
+
+[5 rows x 53 columns]
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1739387827.005800   24364 dataset.cc:410] max_vocab_count = -1 for column NST_B_Label, the dictionary will not be pruned by size.
+Train model on 3798 examples
+I0000 00:00:1739387827.029108   24364 learner.cc:146] Data spec:
+Number of records: 3798
+Number of columns: 53
+
+Number of columns by type:
+        NUMERICAL: 52 (98.1132%)
+        CATEGORICAL: 1 (1.88679%)
+
+Columns:
+
+NUMERICAL: 52 (98.1132%)
+        1: "Unnamed: 0" NUMERICAL mean:2356.75 min:0 max:4719 sd:1363.48 dtype:DTYPE_INT64
+        2: "start" NUMERICAL mean:1.67844e+09 min:1.67844e+09 max:1.67845e+09 sd:25915.5 dtype:DTYPE_FLOAT64
+        3: "end" NUMERICAL mean:1.67844e+09 min:1.67844e+09 max:1.67845e+09 sd:26518.5 dtype:DTYPE_FLOAT64
+        4: "startOffset" NUMERICAL mean:2779.76 min:0 max:5439.49 sd:1557.55 dtype:DTYPE_FLOAT64
+        5: "endOffset" NUMERICAL mean:2779.8 min:2e-06 max:5439.49 sd:1557.57 dtype:DTYPE_FLOAT64
+        6: "duration" NUMERICAL mean:0.0447385 min:1e-06 max:0.499863 sd:0.127597 dtype:DTYPE_FLOAT64
+        7: "sPackets" NUMERICAL mean:2.3486 min:0 max:30 sd:2.87168 dtype:DTYPE_INT64
+        8: "rPackets" NUMERICAL mean:3.81622 min:0 max:180 sd:15.8112 dtype:DTYPE_INT64
+        9: "sBytesSum" NUMERICAL mean:213.802 min:0 max:12340 sd:426.578 dtype:DTYPE_INT64
+        10: "rBytesSum" NUMERICAL mean:229.293 min:0 max:7920 sd:824.856 dtype:DTYPE_INT64
+        11: "sBytesMax" NUMERICAL num-nas:133 (3.50184%) mean:98.2791 min:36 max:1500 sd:112.809 dtype:DTYPE_FLOAT64
+        12: "rBytesMax" NUMERICAL num-nas:3361 (88.4939%) mean:332.835 min:36 max:1412 sd:528.758 dtype:DTYPE_FLOAT64
+        13: "sBytesMin" NUMERICAL num-nas:133 (3.50184%) mean:80.1291 min:36 max:328 sd:68.1239 dtype:DTYPE_FLOAT64
+        14: "rBytesMin" NUMERICAL num-nas:3361 (88.4939%) mean:50.7735 min:36 max:233 sd:25.4551 dtype:DTYPE_FLOAT64
+        15: "sBytesAvg" NUMERICAL num-nas:133 (3.50184%) mean:83.3056 min:36 max:560.909 sd:69.077 dtype:DTYPE_FLOAT64
+        16: "rBytesAvg" NUMERICAL num-nas:3361 (88.4939%) mean:83.3462 min:36 max:294.833 sd:59.8333 dtype:DTYPE_FLOAT64
+        17: "sLoad" NUMERICAL mean:4.57761e+08 min:0 max:5.248e+09 sd:5.06378e+08 dtype:DTYPE_FLOAT64
+        18: "rLoad" NUMERICAL mean:3.75424e+06 min:0 max:2.69111e+09 sd:7.0536e+07 dtype:DTYPE_FLOAT64
+        19: "sPayloadSum" NUMERICAL mean:79.2617 min:0 max:11196 sd:332.173 dtype:DTYPE_INT64
+        20: "rPayloadSum" NUMERICAL mean:55.0334 min:0 max:3338 sd:327.928 dtype:DTYPE_INT64
+        21: "sPayloadMax" NUMERICAL num-nas:133 (3.50184%) mean:37.701 min:0 max:1448 sd:117.745 dtype:DTYPE_FLOAT64
+        22: "rPayloadMax" NUMERICAL num-nas:3361 (88.4939%) mean:285.027 min:0 max:1360 sd:526.659 dtype:DTYPE_FLOAT64
+        23: "sPayloadMin" NUMERICAL num-nas:133 (3.50184%) mean:19.9089 min:0 max:300 sd:73.8342 dtype:DTYPE_FLOAT64
+        24: "rPayloadMin" NUMERICAL num-nas:3361 (88.4939%) mean:3.78947 min:0 max:205 sd:27.4822 dtype:DTYPE_FLOAT64
+        25: "sPayloadAvg" NUMERICAL num-nas:133 (3.50184%) mean:22.809 min:0 max:508.909 sd:75.1437 dtype:DTYPE_FLOAT64
+        26: "rPayloadAvg" NUMERICAL num-nas:3361 (88.4939%) mean:34.9625 min:0 max:241.5 sd:58.499 dtype:DTYPE_FLOAT64
+        27: "sInterPacketAvg" NUMERICAL num-nas:1014 (26.6983%) mean:0.00401557 min:0 max:0.263734 sd:0.015183 dtype:DTYPE_FLOAT64
+        28: "rInterPacketAvg" NUMERICAL num-nas:3370 (88.7309%) mean:0.0194879 min:0 max:0.121961 sd:0.0181983 dtype:DTYPE_FLOAT64
+        29: "sttl" NUMERICAL num-nas:3500 (92.1538%) mean:64 min:64 max:64 sd:0 dtype:DTYPE_FLOAT64
+        30: "rttl" NUMERICAL num-nas:3378 (88.9415%) mean:56.1367 min:45.125 max:64 sd:7.93825 dtype:DTYPE_FLOAT64
+        31: "sAckRate" NUMERICAL num-nas:3500 (92.1538%) mean:0.965034 min:0.667 max:1 sd:0.0741976 dtype:DTYPE_FLOAT64
+        32: "rAckRate" NUMERICAL num-nas:3378 (88.9415%) mean:0.417043 min:0 max:1 sd:0.429965 dtype:DTYPE_FLOAT64
+        33: "sUrgRate" NUMERICAL num-nas:3500 (92.1538%) mean:0 min:0 max:0 sd:0 dtype:DTYPE_FLOAT64
+        34: "rUrgRate" NUMERICAL num-nas:3378 (88.9415%) mean:0 min:0 max:0 sd:0 dtype:DTYPE_FLOAT64
+        35: "sFinRate" NUMERICAL num-nas:3500 (92.1538%) mean:0.0856242 min:0 max:0.5 sd:0.129841 dtype:DTYPE_FLOAT64
+        36: "rFinRate" NUMERICAL num-nas:3378 (88.9415%) mean:0.034931 min:0 max:0.5 sd:0.102994 dtype:DTYPE_FLOAT64
+        37: "sPshRate" NUMERICAL num-nas:3500 (92.1538%) mean:0.181074 min:0 max:1 sd:0.206204 dtype:DTYPE_FLOAT64
+        38: "rPshRate" NUMERICAL num-nas:3378 (88.9415%) mean:0.192552 min:0 max:0.714 sd:0.224032 dtype:DTYPE_FLOAT64
+        39: "sSynRate" NUMERICAL num-nas:3500 (92.1538%) mean:0.417027 min:0 max:1 sd:0.397043 dtype:DTYPE_FLOAT64
+        40: "rSynRate" NUMERICAL num-nas:3378 (88.9415%) mean:0.57635 min:0 max:1 sd:0.423932 dtype:DTYPE_FLOAT64
+        41: "sRstRate" NUMERICAL num-nas:3500 (92.1538%) mean:0.0882349 min:0 max:0.4 sd:0.132036 dtype:DTYPE_FLOAT64
+        42: "rRstRate" NUMERICAL num-nas:3378 (88.9415%) mean:0.0066119 min:0 max:0.2 sd:0.0189526 dtype:DTYPE_FLOAT64
+        43: "sWinTCP" NUMERICAL num-nas:3500 (92.1538%) mean:10553.2 min:7240 max:14600 sd:2693.79 dtype:DTYPE_FLOAT64
+        44: "rWinTCP" NUMERICAL num-nas:3378 (88.9415%) mean:6196.39 min:500 max:64240 sd:8824.06 dtype:DTYPE_FLOAT64
+        45: "sFragmentRate" NUMERICAL num-nas:2912 (76.6719%) mean:0 min:0 max:0 sd:0 dtype:DTYPE_FLOAT64
+        46: "rFragmentRate" NUMERICAL num-nas:3368 (88.6783%) mean:0 min:0 max:0 sd:0 dtype:DTYPE_FLOAT64
+        47: "sAckDelayMax" NUMERICAL num-nas:3590 (94.5234%) mean:0.0779183 min:0 max:0.495 sd:0.109729 dtype:DTYPE_FLOAT64
+        48: "rAckDelayMax" NUMERICAL num-nas:3501 (92.1801%) mean:0.00343434 min:0 max:0.098 sd:0.00755696 dtype:DTYPE_FLOAT64
+        49: "sAckDelayMin" NUMERICAL num-nas:3590 (94.5234%) mean:0.000269231 min:0 max:0.038 sd:0.00263749 dtype:DTYPE_FLOAT64
+        50: "rAckDelayMin" NUMERICAL num-nas:3501 (92.1801%) mean:4.0404e-05 min:0 max:0.001 sd:0.000196905 dtype:DTYPE_FLOAT64
+        51: "sAckDelayAvg" NUMERICAL num-nas:3590 (94.5234%) mean:0.0110175 min:0.000238 max:0.077865 sd:0.0133564 dtype:DTYPE_FLOAT64
+        52: "rAckDelayAvg" NUMERICAL num-nas:3501 (92.1801%) mean:0.000773734 min:0.000179 max:0.005754 sd:0.000560469 dtype:DTYPE_FLOAT64
+
+CATEGORICAL: 1 (1.88679%)
+        0: "NST_B_Label" CATEGORICAL has-dict vocab-size:3 zero-ood-items most-frequent:"0" 2797 (73.644%) dtype:DTYPE_INT64
+
+Terminology:
+        nas: Number of non-available (i.e. missing) values.
+        ood: Out of dictionary.
+        manually-defined: Attribute whose type is manually defined by the user, i.e., the type was not automatically inferred.
+        tokenized: The attribute value is obtained through tokenization.
+        has-dict: The attribute is attached to a string dictionary e.g. a categorical attribute stored as a string.
+        vocab-size: Number of unique values.
+
+I0000 00:00:1739387827.039333   24364 abstract_learner.cc:140] No input feature explicitly specified. Using all the available input features.
+I0000 00:00:1739387827.039533   24364 abstract_learner.cc:154] The label "NST_B_Label" was removed from the input feature set.
+I0000 00:00:1739387827.041048   24364 random_forest.cc:428] Training random forest on 3798 example(s) and 52 feature(s).
+I0000 00:00:1739387827.085070   18944 random_forest.cc:812] Training of tree  1/300 (tree index:1) done accuracy:0.924448 logloss:2.72318
+I0000 00:00:1739387827.112087   19132 random_forest.cc:812] Training of tree  11/300 (tree index:12) done accuracy:0.931373 logloss:1.67814
+I0000 00:00:1739387827.145044   34956 random_forest.cc:812] Training of tree  21/300 (tree index:21) done accuracy:0.932842 logloss:1.03333
+I0000 00:00:1739387827.174587   34956 random_forest.cc:812] Training of tree  31/300 (tree index:28) done accuracy:0.933649 logloss:0.775006
+I0000 00:00:1739387827.215221   24276 random_forest.cc:812] Training of tree  41/300 (tree index:36) done accuracy:0.934439 logloss:0.726147
+I0000 00:00:1739387827.250511   18944 random_forest.cc:812] Training of tree  51/300 (tree index:50) done accuracy:0.934439 logloss:0.693324
+I0000 00:00:1739387827.278496   10788 random_forest.cc:812] Training of tree  61/300 (tree index:60) done accuracy:0.933649 logloss:0.678088
+I0000 00:00:1739387827.316395   19132 random_forest.cc:812] Training of tree  71/300 (tree index:70) done accuracy:0.933913 logloss:0.679471
+I0000 00:00:1739387827.348191   24276 random_forest.cc:812] Training of tree  81/300 (tree index:79) done accuracy:0.933649 logloss:0.623061
+I0000 00:00:1739387827.381404   28056 random_forest.cc:812] Training of tree  91/300 (tree index:90) done accuracy:0.933913 logloss:0.556171
+I0000 00:00:1739387827.420684   19132 random_forest.cc:812] Training of tree  101/300 (tree index:100) done accuracy:0.934702 logloss:0.490261
+I0000 00:00:1739387827.456668   10788 random_forest.cc:812] Training of tree  111/300 (tree index:109) done accuracy:0.935229 logloss:0.49265
+I0000 00:00:1739387827.494354   34956 random_forest.cc:812] Training of tree  121/300 (tree index:123) done accuracy:0.934966 logloss:0.484212
+I0000 00:00:1739387827.527886   10788 random_forest.cc:812] Training of tree  131/300 (tree index:126) done accuracy:0.934966 logloss:0.414676
+I0000 00:00:1739387827.563911   18944 random_forest.cc:812] Training of tree  141/300 (tree index:140) done accuracy:0.934702 logloss:0.399422
+I0000 00:00:1739387827.598831   24276 random_forest.cc:812] Training of tree  151/300 (tree index:147) done accuracy:0.934176 logloss:0.390917
+I0000 00:00:1739387827.630870   28056 random_forest.cc:812] Training of tree  161/300 (tree index:155) done accuracy:0.934439 logloss:0.382714
+I0000 00:00:1739387827.664422   40984 random_forest.cc:812] Training of tree  171/300 (tree index:169) done accuracy:0.934966 logloss:0.375908
+I0000 00:00:1739387827.702513   40984 random_forest.cc:812] Training of tree  181/300 (tree index:178) done accuracy:0.935229 logloss:0.37412
+I0000 00:00:1739387827.736322   34956 random_forest.cc:812] Training of tree  191/300 (tree index:191) done accuracy:0.935229 logloss:0.339358
+I0000 00:00:1739387827.770535   18944 random_forest.cc:812] Training of tree  201/300 (tree index:199) done accuracy:0.935492 logloss:0.339162
+I0000 00:00:1739387827.801864   10788 random_forest.cc:812] Training of tree  211/300 (tree index:211) done accuracy:0.935229 logloss:0.321464
+I0000 00:00:1739387827.842803   34956 random_forest.cc:812] Training of tree  221/300 (tree index:221) done accuracy:0.934966 logloss:0.322643
+I0000 00:00:1739387827.882652   40984 random_forest.cc:812] Training of tree  232/300 (tree index:230) done accuracy:0.934966 logloss:0.313156
+I0000 00:00:1739387827.915846   24276 random_forest.cc:812] Training of tree  242/300 (tree index:241) done accuracy:0.935492 logloss:0.276889
+I0000 00:00:1739387827.955444   10788 random_forest.cc:812] Training of tree  252/300 (tree index:252) done accuracy:0.935229 logloss:0.275535
+I0000 00:00:1739387828.002666   18944 random_forest.cc:812] Training of tree  262/300 (tree index:265) done accuracy:0.935229 logloss:0.272462
+I0000 00:00:1739387828.030461   28056 random_forest.cc:812] Training of tree  272/300 (tree index:271) done accuracy:0.934966 logloss:0.272691
+I0000 00:00:1739387828.068634   40984 random_forest.cc:812] Training of tree  282/300 (tree index:281) done accuracy:0.934702 logloss:0.265001
+I0000 00:00:1739387828.105563   18944 random_forest.cc:812] Training of tree  292/300 (tree index:293) done accuracy:0.935492 logloss:0.265644
+I0000 00:00:1739387828.126002   18944 random_forest.cc:812] Training of tree  300/300 (tree index:299) done accuracy:0.935229 logloss:0.266501
+I0000 00:00:1739387828.126667   24364 random_forest.cc:892] Final OOB metrics: accuracy:0.935229 logloss:0.266501
+Model trained in 0:00:01.169895
+accuracy: 0.935229
+confusion matrix:
+    label (row) \ prediction (col)
+    +------+------+------+
+    |      |    0 |    1 |
+    +------+------+------+
+    |    0 | 2775 |   22 |
+    +------+------+------+
+    |    1 |  224 |  777 |
+    +------+------+------+
+loss: 0.266501
+num examples: 3798
+num examples (weighted): 3798
+
++++++++++++++++++ RF Model +++++++++++++++++++
+I0000 00:00:1739387828.282505   24364 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387828.283041   24364 abstract_model.cc:1404] Engine "RandomForestOptPred" built
+accuracy: 0.93167
+confusion matrix:
+    label (row) \ prediction (col)
+    +-----+-----+-----+
+    |     |   0 |   1 |
+    +-----+-----+-----+
+    |   0 | 663 |   4 |
+    +-----+-----+-----+
+    |   1 |  59 | 196 |
+    +-----+-----+-----+
+characteristics:
+    name: '1' vs others
+    ROC AUC: 0.984978
+    PR AUC: 0.968718
+    Num thresholds: 123
+loss: 0.211098
+num examples: 922
+num examples (weighted): 922
+
++++++++++++++++++ Describe +++++++++++++++++++
+I0000 00:00:1739387828.302886   24364 abstract_model.cc:914] Model self evaluation:
+Number of predictions (without weights): 3798
+Number of predictions (with weights): 3798
+Task: CLASSIFICATION
+Label: NST_B_Label
+
+Accuracy: 0.935229  CI95[W][0.928276 0.94168]
+LogLoss: : 0.266501
+ErrorRate: : 0.0647709
+
+Default Accuracy: : 0.73644
+Default LogLoss: : 0.576747
+Default ErrorRate: : 0.26356
+
+Confusion Table:
+truth\prediction
+          0    1
+    0  2775   22
+    1   224  777
+Total: 3798
+
+
+Type: "RANDOM_FOREST"
+Task: CLASSIFICATION
+Label: "NST_B_Label"
+
+Input Features (52):
+        Unnamed: 0
+        start
+        end
+        startOffset
+        endOffset
+        duration
+        sPackets
+        rPackets
+        sBytesSum
+        rBytesSum
+        sBytesMax
+        rBytesMax
+        sBytesMin
+        rBytesMin
+        sBytesAvg
+        rBytesAvg
+        sLoad
+        rLoad
+        sPayloadSum
+        rPayloadSum
+        sPayloadMax
+        rPayloadMax
+        sPayloadMin
+        rPayloadMin
+        sPayloadAvg
+        rPayloadAvg
+        sInterPacketAvg
+        rInterPacketAvg
+        sttl
+        rttl
+        sAckRate
+        rAckRate
+        sUrgRate
+        rUrgRate
+        sFinRate
+        rFinRate
+        sPshRate
+        rPshRate
+        sSynRate
+        rSynRate
+        sRstRate
+        rRstRate
+        sWinTCP
+        rWinTCP
+        sFragmentRate
+        rFragmentRate
+        sAckDelayMax
+        rAckDelayMax
+        sAckDelayMin
+        rAckDelayMin
+        sAckDelayAvg
+        rAckDelayAvg
+
+No weights
+
+Variable Importance: INV_MEAN_MIN_DEPTH:
+    1.       "endOffset"  0.195864 ################
+    2.     "startOffset"  0.188858 ##############
+    3.        "duration"  0.162763 ##########
+    4.      "Unnamed: 0"  0.162426 ##########
+    5.           "sLoad"  0.146569 #######
+    6.             "end"  0.116970 ###
+    7.     "rPayloadMin"  0.116440 ##
+    8.           "start"  0.115645 ##
+    9.        "sPackets"  0.114428 ##
+   10. "sInterPacketAvg"  0.113256 ##
+   11.       "rBytesSum"  0.110539 ##
+   12.        "rPackets"  0.106688 #
+   13.           "rLoad"  0.106141 #
+   14.        "rFinRate"  0.105039 #
+   15.       "rBytesMax"  0.104358 #
+   16.     "rPayloadMax"  0.103491
+   17.       "sBytesSum"  0.102214
+   18.        "rRstRate"  0.102182
+   19.     "rPayloadAvg"  0.101980
+   20.     "sPayloadMin"  0.101448
+   21.     "sPayloadAvg"  0.101192
+   22.       "rBytesAvg"  0.100540
+   23.         "rWinTCP"  0.100287
+   24.     "sPayloadSum"  0.100114
+   25.    "rAckDelayMin"  0.100034
+   26.       "sBytesMin"  0.099956
+   27.     "sPayloadMax"  0.099904
+   28.       "sBytesAvg"  0.099866
+   29. "rInterPacketAvg"  0.099146
+   30.       "sBytesMax"  0.099128
+   31.    "sAckDelayMin"  0.099105
+   32.        "rSynRate"  0.098980
+   33.       "rBytesMin"  0.098979
+   34.     "rPayloadSum"  0.098885
+   35.        "rAckRate"  0.098866
+   36.        "rPshRate"  0.098554
+   37.        "sSynRate"  0.098549
+   38.         "sWinTCP"  0.098540
+   39.        "sPshRate"  0.098484
+   40.            "rttl"  0.098377
+   41.        "sAckRate"  0.098250
+   42.        "sFinRate"  0.098198
+
+Variable Importance: NUM_AS_ROOT:
+    1.        "duration" 54.000000 ################
+    2.           "sLoad" 46.000000 #############
+    3.     "rPayloadMin" 39.000000 ###########
+    4.       "rBytesSum" 33.000000 #########
+    5.        "rPackets" 24.000000 ######
+    6.           "rLoad" 21.000000 ######
+    7.        "rFinRate" 18.000000 #####
+    8.       "rBytesMax" 17.000000 ####
+    9.     "rPayloadMax" 13.000000 ###
+   10.        "rRstRate"  9.000000 ##
+   11.       "rBytesAvg"  6.000000 #
+   12.         "rWinTCP"  6.000000 #
+   13.     "rPayloadAvg"  5.000000 #
+   14.    "rAckDelayMin"  4.000000
+   15.        "sPackets"  2.000000
+   16. "sInterPacketAvg"  1.000000
+   17.        "rPshRate"  1.000000
+   18.    "sAckDelayMin"  1.000000
+
+Variable Importance: NUM_NODES:
+    1.       "endOffset" 5319.000000 ################
+    2.     "startOffset" 5290.000000 ###############
+    3.      "Unnamed: 0" 3925.000000 ###########
+    4.           "sLoad" 900.000000 ##
+    5.        "duration" 737.000000 ##
+    6. "sInterPacketAvg" 697.000000 ##
+    7.             "end" 636.000000 #
+    8.           "start" 618.000000 #
+    9.       "sBytesSum" 258.000000
+   10.       "sBytesMin" 137.000000
+   11.     "sPayloadMin" 130.000000
+   12.        "sPackets" 118.000000
+   13.     "sPayloadAvg" 117.000000
+   14.       "sBytesAvg" 109.000000
+   15.     "rPayloadMin" 104.000000
+   16.       "sBytesMax" 103.000000
+   17.     "sPayloadMax" 100.000000
+   18.     "sPayloadSum" 84.000000
+   19.           "rLoad" 79.000000
+   20.       "rBytesSum" 64.000000
+   21.        "rPackets" 59.000000
+   22.     "rPayloadMax" 33.000000
+   23.     "rPayloadAvg" 32.000000
+   24.       "rBytesMax" 31.000000
+   25.       "rBytesAvg" 31.000000
+   26.        "rFinRate" 31.000000
+   27.       "rBytesMin" 28.000000
+   28. "rInterPacketAvg" 27.000000
+   29.        "rRstRate" 25.000000
+   30.     "rPayloadSum" 16.000000
+   31.    "rAckDelayMin" 14.000000
+   32.         "rWinTCP" 11.000000
+   33.            "rttl"  9.000000
+   34.        "rAckRate"  9.000000
+   35.         "sWinTCP"  6.000000
+   36.    "sAckDelayMin"  6.000000
+   37.        "rPshRate"  5.000000
+   38.        "sAckRate"  4.000000
+   39.        "sSynRate"  4.000000
+   40.        "rSynRate"  4.000000
+   41.        "sFinRate"  1.000000
+   42.        "sPshRate"  1.000000
+
+Variable Importance: SUM_SCORE:
+    1.       "endOffset" 81298.336268 ################
+    2.     "startOffset" 80157.476797 ###############
+    3.        "duration" 56628.665682 ###########
+    4.      "Unnamed: 0" 48043.482332 #########
+    5.           "sLoad" 48026.002721 #########
+    6.     "rPayloadMin" 27519.389367 #####
+    7.       "rBytesSum" 21801.386544 ####
+    8.        "rPackets" 16281.854511 ###
+    9.           "rLoad" 13987.128978 ##
+   10.        "rFinRate" 10014.460374 #
+   11.        "sPackets" 9290.770389 #
+   12.       "rBytesMax" 8621.843332 #
+   13. "sInterPacketAvg" 8533.928339 #
+   14.     "rPayloadMax" 6864.986393 #
+   15.             "end" 6380.580095 #
+   16.           "start" 5701.054561 #
+   17.        "rRstRate" 5187.517801 #
+   18.     "rPayloadAvg" 3509.330333
+   19.     "sPayloadMin" 2982.961099
+   20.       "rBytesAvg" 2982.754717
+   21.       "sBytesSum" 2680.806077
+   22.         "rWinTCP" 2577.583154
+   23.     "sPayloadAvg" 2261.351600
+   24.       "sBytesMin" 2112.816697
+   25.    "rAckDelayMin" 2089.161923
+   26.       "sBytesAvg" 1776.186912
+   27.     "sPayloadSum" 1502.310523
+   28.     "sPayloadMax" 1102.281892
+   29.       "sBytesMax" 970.804926
+   30.    "sAckDelayMin" 662.598587
+   31.       "rBytesMin" 517.297764
+   32.     "rPayloadSum" 416.794553
+   33.        "rSynRate" 381.814234
+   34.        "rPshRate" 365.921680
+   35.        "rAckRate" 320.695268
+   36.        "sSynRate" 300.355145
+   37.         "sWinTCP" 216.695152
+   38. "rInterPacketAvg" 175.617693
+   39.        "sPshRate" 147.991147
+   40.            "rttl" 117.944776
+   41.        "sAckRate" 28.528757
+   42.        "sFinRate"  1.104754
+
+
+
+Winner takes all: true
+Out-of-bag evaluation: accuracy:0.935229 logloss:0.266501
+Number of trees: 300
+Total number of nodes: 40124
+
+Number of nodes by tree:
+Count: 300 Average: 133.747 StdDev: 23.1575
+Min: 93 Max: 217 Ignored: 0
+----------------------------------------------
+[  93,  99)  3   1.00%   1.00% #
+[  99, 105) 11   3.67%   4.67% ##
+[ 105, 111) 13   4.33%   9.00% ###
+[ 111, 118) 43  14.33%  23.33% ########
+[ 118, 124) 47  15.67%  39.00% #########
+[ 124, 130) 51  17.00%  56.00% ##########
+[ 130, 136) 34  11.33%  67.33% #######
+[ 136, 143) 18   6.00%  73.33% ####
+[ 143, 149) 13   4.33%  77.67% ###
+[ 149, 155) 11   3.67%  81.33% ##
+[ 155, 161) 13   4.33%  85.67% ###
+[ 161, 168) 13   4.33%  90.00% ###
+[ 168, 174)  5   1.67%  91.67% #
+[ 174, 180)  5   1.67%  93.33% #
+[ 180, 186)  9   3.00%  96.33% ##
+[ 186, 193)  4   1.33%  97.67% #
+[ 193, 199)  4   1.33%  99.00% #
+[ 199, 205)  0   0.00%  99.00%
+[ 205, 211)  2   0.67%  99.67%
+[ 211, 217]  1   0.33% 100.00%
+
+Depth by leafs:
+Count: 20212 Average: 9.24896 StdDev: 3.42092
+Min: 1 Max: 15 Ignored: 0
+----------------------------------------------
+[  1,  2)   56   0.28%   0.28%
+[  2,  3)  282   1.40%   1.67% #
+[  3,  4)  378   1.87%   3.54% ##
+[  4,  5)  823   4.07%   7.61% ####
+[  5,  6) 1350   6.68%  14.29% ######
+[  6,  7) 1767   8.74%  23.04% ########
+[  7,  8) 2149  10.63%  33.67% #########
+[  8,  9) 2294  11.35%  45.02% ##########
+[  9, 10) 2128  10.53%  55.55% #########
+[ 10, 11) 1781   8.81%  64.36% ########
+[ 11, 12) 1565   7.74%  72.10% #######
+[ 12, 13) 1337   6.61%  78.72% ######
+[ 13, 14) 1254   6.20%  84.92% #####
+[ 14, 15) 1096   5.42%  90.34% #####
+[ 15, 15] 1952   9.66% 100.00% #########
+
+Number of training obs by leaf:
+Count: 20212 Average: 56.3725 StdDev: 154.291
+Min: 5 Max: 1966 Ignored: 0
+----------------------------------------------
+[    5,  103) 17241  85.30%  85.30% ##########
+[  103,  201)  1827   9.04%  94.34% #
+[  201,  299)   483   2.39%  96.73%
+[  299,  397)   168   0.83%  97.56%
+[  397,  495)   185   0.92%  98.48%
+[  495,  593)    28   0.14%  98.61%
+[  593,  691)    35   0.17%  98.79%
+[  691,  789)    34   0.17%  98.96%
+[  789,  887)    25   0.12%  99.08%
+[  887,  986)    16   0.08%  99.16%
+[  986, 1084)    15   0.07%  99.23%
+[ 1084, 1182)    14   0.07%  99.30%
+[ 1182, 1280)    12   0.06%  99.36%
+[ 1280, 1378)    17   0.08%  99.45%
+[ 1378, 1476)    46   0.23%  99.67%
+[ 1476, 1574)    41   0.20%  99.88%
+[ 1574, 1672)    18   0.09%  99.97%
+[ 1672, 1770)     0   0.00%  99.97%
+[ 1770, 1868)     5   0.02%  99.99%
+[ 1868, 1966]     2   0.01% 100.00%
+
+Attribute in nodes:
+        5319 : endOffset [NUMERICAL]
+        5290 : startOffset [NUMERICAL]
+        3925 : Unnamed: 0 [NUMERICAL]
+        900 : sLoad [NUMERICAL]
+        737 : duration [NUMERICAL]
+        697 : sInterPacketAvg [NUMERICAL]
+        636 : end [NUMERICAL]
+        618 : start [NUMERICAL]
+        258 : sBytesSum [NUMERICAL]
+        137 : sBytesMin [NUMERICAL]
+        130 : sPayloadMin [NUMERICAL]
+        118 : sPackets [NUMERICAL]
+        117 : sPayloadAvg [NUMERICAL]
+        109 : sBytesAvg [NUMERICAL]
+        104 : rPayloadMin [NUMERICAL]
+        103 : sBytesMax [NUMERICAL]
+        100 : sPayloadMax [NUMERICAL]
+        84 : sPayloadSum [NUMERICAL]
+        79 : rLoad [NUMERICAL]
+        64 : rBytesSum [NUMERICAL]
+        59 : rPackets [NUMERICAL]
+        33 : rPayloadMax [NUMERICAL]
+        32 : rPayloadAvg [NUMERICAL]
+        31 : rFinRate [NUMERICAL]
+        31 : rBytesAvg [NUMERICAL]
+        31 : rBytesMax [NUMERICAL]
+        28 : rBytesMin [NUMERICAL]
+        27 : rInterPacketAvg [NUMERICAL]
+        25 : rRstRate [NUMERICAL]
+        16 : rPayloadSum [NUMERICAL]
+        14 : rAckDelayMin [NUMERICAL]
+        11 : rWinTCP [NUMERICAL]
+        9 : rAckRate [NUMERICAL]
+        9 : rttl [NUMERICAL]
+        6 : sAckDelayMin [NUMERICAL]
+        6 : sWinTCP [NUMERICAL]
+        5 : rPshRate [NUMERICAL]
+        4 : rSynRate [NUMERICAL]
+        4 : sSynRate [NUMERICAL]
+        4 : sAckRate [NUMERICAL]
+        1 : sPshRate [NUMERICAL]
+        1 : sFinRate [NUMERICAL]
+
+Attribute in nodes with depth <= 0:
+        54 : duration [NUMERICAL]
+        46 : sLoad [NUMERICAL]
+        39 : rPayloadMin [NUMERICAL]
+        33 : rBytesSum [NUMERICAL]
+        24 : rPackets [NUMERICAL]
+        21 : rLoad [NUMERICAL]
+        18 : rFinRate [NUMERICAL]
+        17 : rBytesMax [NUMERICAL]
+        13 : rPayloadMax [NUMERICAL]
+        9 : rRstRate [NUMERICAL]
+        6 : rWinTCP [NUMERICAL]
+        6 : rBytesAvg [NUMERICAL]
+        5 : rPayloadAvg [NUMERICAL]
+        4 : rAckDelayMin [NUMERICAL]
+        2 : sPackets [NUMERICAL]
+        1 : sAckDelayMin [NUMERICAL]
+        1 : rPshRate [NUMERICAL]
+        1 : sInterPacketAvg [NUMERICAL]
+
+Attribute in nodes with depth <= 1:
+        128 : duration [NUMERICAL]
+        94 : sLoad [NUMERICAL]
+        75 : rPayloadMin [NUMERICAL]
+        47 : rBytesSum [NUMERICAL]
+        44 : rLoad [NUMERICAL]
+        43 : endOffset [NUMERICAL]
+        42 : rPackets [NUMERICAL]
+        40 : sPackets [NUMERICAL]
+        40 : startOffset [NUMERICAL]
+        26 : rFinRate [NUMERICAL]
+        23 : sInterPacketAvg [NUMERICAL]
+        20 : rBytesMax [NUMERICAL]
+        19 : sPayloadMin [NUMERICAL]
+        19 : rPayloadMax [NUMERICAL]
+        18 : rRstRate [NUMERICAL]
+        18 : rPayloadAvg [NUMERICAL]
+        16 : end [NUMERICAL]
+        16 : Unnamed: 0 [NUMERICAL]
+        14 : rBytesAvg [NUMERICAL]
+        12 : start [NUMERICAL]
+        11 : sPayloadAvg [NUMERICAL]
+        11 : sBytesAvg [NUMERICAL]
+        11 : rBytesMin [NUMERICAL]
+        10 : sBytesMin [NUMERICAL]
+        8 : rAckDelayMin [NUMERICAL]
+        8 : rWinTCP [NUMERICAL]
+        6 : rInterPacketAvg [NUMERICAL]
+        6 : sBytesSum [NUMERICAL]
+        3 : sAckDelayMin [NUMERICAL]
+        3 : sPayloadSum [NUMERICAL]
+        2 : rSynRate [NUMERICAL]
+        2 : rAckRate [NUMERICAL]
+        2 : rPayloadSum [NUMERICAL]
+        1 : sWinTCP [NUMERICAL]
+        1 : sSynRate [NUMERICAL]
+        1 : rPshRate [NUMERICAL]
+        1 : sPshRate [NUMERICAL]
+        1 : sAckRate [NUMERICAL]
+        1 : rttl [NUMERICAL]
+        1 : sPayloadMax [NUMERICAL]
+
+Attribute in nodes with depth <= 2:
+        170 : endOffset [NUMERICAL]
+        167 : duration [NUMERICAL]
+        137 : startOffset [NUMERICAL]
+        125 : sLoad [NUMERICAL]
+        108 : Unnamed: 0 [NUMERICAL]
+        88 : rPayloadMin [NUMERICAL]
+        56 : rBytesSum [NUMERICAL]
+        55 : sPackets [NUMERICAL]
+        54 : rLoad [NUMERICAL]
+        50 : sPayloadMin [NUMERICAL]
+        50 : rPackets [NUMERICAL]
+        50 : end [NUMERICAL]
+        46 : sInterPacketAvg [NUMERICAL]
+        44 : sPayloadAvg [NUMERICAL]
+        43 : start [NUMERICAL]
+        39 : sBytesAvg [NUMERICAL]
+        38 : sBytesMin [NUMERICAL]
+        36 : sPayloadSum [NUMERICAL]
+        31 : sBytesSum [NUMERICAL]
+        29 : rFinRate [NUMERICAL]
+        24 : rPayloadAvg [NUMERICAL]
+        24 : rPayloadMax [NUMERICAL]
+        22 : rRstRate [NUMERICAL]
+        21 : sPayloadMax [NUMERICAL]
+        21 : rBytesMax [NUMERICAL]
+        20 : rBytesAvg [NUMERICAL]
+        20 : rBytesMin [NUMERICAL]
+        17 : sBytesMax [NUMERICAL]
+        10 : rAckDelayMin [NUMERICAL]
+        10 : rWinTCP [NUMERICAL]
+        10 : rInterPacketAvg [NUMERICAL]
+        7 : rttl [NUMERICAL]
+        5 : rAckRate [NUMERICAL]
+        5 : rPayloadSum [NUMERICAL]
+        4 : sAckDelayMin [NUMERICAL]
+        4 : sWinTCP [NUMERICAL]
+        4 : rPshRate [NUMERICAL]
+        2 : rSynRate [NUMERICAL]
+        2 : sSynRate [NUMERICAL]
+        1 : sPshRate [NUMERICAL]
+        1 : sAckRate [NUMERICAL]
+
+Attribute in nodes with depth <= 3:
+        404 : endOffset [NUMERICAL]
+        346 : startOffset [NUMERICAL]
+        316 : Unnamed: 0 [NUMERICAL]
+        274 : duration [NUMERICAL]
+        220 : sLoad [NUMERICAL]
+        147 : sInterPacketAvg [NUMERICAL]
+        108 : end [NUMERICAL]
+        93 : rPayloadMin [NUMERICAL]
+        85 : start [NUMERICAL]
+        66 : rLoad [NUMERICAL]
+        63 : sPayloadMin [NUMERICAL]
+        62 : rBytesSum [NUMERICAL]
+        61 : sPackets [NUMERICAL]
+        59 : sPayloadAvg [NUMERICAL]
+        55 : rPackets [NUMERICAL]
+        52 : sBytesSum [NUMERICAL]
+        48 : sBytesMin [NUMERICAL]
+        44 : sPayloadSum [NUMERICAL]
+        43 : sBytesAvg [NUMERICAL]
+        33 : sPayloadMax [NUMERICAL]
+        31 : rFinRate [NUMERICAL]
+        27 : rPayloadMax [NUMERICAL]
+        26 : rPayloadAvg [NUMERICAL]
+        26 : rBytesMax [NUMERICAL]
+        24 : rRstRate [NUMERICAL]
+        24 : sBytesMax [NUMERICAL]
+        23 : rBytesAvg [NUMERICAL]
+        23 : rBytesMin [NUMERICAL]
+        19 : rInterPacketAvg [NUMERICAL]
+        12 : rAckDelayMin [NUMERICAL]
+        12 : rPayloadSum [NUMERICAL]
+        11 : rWinTCP [NUMERICAL]
+        9 : rAckRate [NUMERICAL]
+        9 : rttl [NUMERICAL]
+        6 : sWinTCP [NUMERICAL]
+        5 : sAckDelayMin [NUMERICAL]
+        5 : rPshRate [NUMERICAL]
+        4 : rSynRate [NUMERICAL]
+        4 : sSynRate [NUMERICAL]
+        4 : sAckRate [NUMERICAL]
+        1 : sPshRate [NUMERICAL]
+
+Attribute in nodes with depth <= 5:
+        1196 : endOffset [NUMERICAL]
+        1154 : Unnamed: 0 [NUMERICAL]
+        1148 : startOffset [NUMERICAL]
+        471 : sLoad [NUMERICAL]
+        447 : duration [NUMERICAL]
+        357 : sInterPacketAvg [NUMERICAL]
+        232 : start [NUMERICAL]
+        230 : end [NUMERICAL]
+        102 : rPayloadMin [NUMERICAL]
+        88 : sPayloadMin [NUMERICAL]
+        83 : sBytesSum [NUMERICAL]
+        79 : sPayloadAvg [NUMERICAL]
+        79 : sPackets [NUMERICAL]
+        76 : rLoad [NUMERICAL]
+        76 : sBytesMin [NUMERICAL]
+        63 : rBytesSum [NUMERICAL]
+        59 : sPayloadMax [NUMERICAL]
+        58 : rPackets [NUMERICAL]
+        57 : sBytesAvg [NUMERICAL]
+        55 : sPayloadSum [NUMERICAL]
+        44 : sBytesMax [NUMERICAL]
+        32 : rPayloadMax [NUMERICAL]
+        31 : rFinRate [NUMERICAL]
+        31 : rPayloadAvg [NUMERICAL]
+        30 : rBytesMax [NUMERICAL]
+        27 : rBytesAvg [NUMERICAL]
+        26 : rBytesMin [NUMERICAL]
+        25 : rRstRate [NUMERICAL]
+        25 : rInterPacketAvg [NUMERICAL]
+        16 : rPayloadSum [NUMERICAL]
+        13 : rAckDelayMin [NUMERICAL]
+        11 : rWinTCP [NUMERICAL]
+        9 : rAckRate [NUMERICAL]
+        9 : rttl [NUMERICAL]
+        6 : sWinTCP [NUMERICAL]
+        5 : sAckDelayMin [NUMERICAL]
+        5 : rPshRate [NUMERICAL]
+        4 : rSynRate [NUMERICAL]
+        4 : sSynRate [NUMERICAL]
+        4 : sAckRate [NUMERICAL]
+        1 : sPshRate [NUMERICAL]
+        1 : sFinRate [NUMERICAL]
+
+Condition type in nodes:
+        19912 : HigherCondition
+Condition type in nodes with depth <= 0:
+        300 : HigherCondition
+Condition type in nodes with depth <= 1:
+        844 : HigherCondition
+Condition type in nodes with depth <= 2:
+        1650 : HigherCondition
+Condition type in nodes with depth <= 3:
+        2884 : HigherCondition
+Condition type in nodes with depth <= 5:
+        6469 : HigherCondition
+Node format: NOT_SET
+
+Training OOB:
+        trees: 1, Out-of-bag evaluation: accuracy:0.924448 logloss:2.72318
+        trees: 11, Out-of-bag evaluation: accuracy:0.931373 logloss:1.67814
+        trees: 21, Out-of-bag evaluation: accuracy:0.932842 logloss:1.03333
+        trees: 31, Out-of-bag evaluation: accuracy:0.933649 logloss:0.775006
+        trees: 41, Out-of-bag evaluation: accuracy:0.934439 logloss:0.726147
+        trees: 51, Out-of-bag evaluation: accuracy:0.934439 logloss:0.693324
+        trees: 61, Out-of-bag evaluation: accuracy:0.933649 logloss:0.678088
+        trees: 71, Out-of-bag evaluation: accuracy:0.933913 logloss:0.679471
+        trees: 81, Out-of-bag evaluation: accuracy:0.933649 logloss:0.623061
+        trees: 91, Out-of-bag evaluation: accuracy:0.933913 logloss:0.556171
+        trees: 101, Out-of-bag evaluation: accuracy:0.934702 logloss:0.490261
+        trees: 111, Out-of-bag evaluation: accuracy:0.935229 logloss:0.49265
+        trees: 121, Out-of-bag evaluation: accuracy:0.934966 logloss:0.484212
+        trees: 131, Out-of-bag evaluation: accuracy:0.934966 logloss:0.414676
+        trees: 141, Out-of-bag evaluation: accuracy:0.934702 logloss:0.399422
+        trees: 151, Out-of-bag evaluation: accuracy:0.934176 logloss:0.390917
+        trees: 161, Out-of-bag evaluation: accuracy:0.934439 logloss:0.382714
+        trees: 171, Out-of-bag evaluation: accuracy:0.934966 logloss:0.375908
+        trees: 181, Out-of-bag evaluation: accuracy:0.935229 logloss:0.37412
+        trees: 191, Out-of-bag evaluation: accuracy:0.935229 logloss:0.339358
+        trees: 201, Out-of-bag evaluation: accuracy:0.935492 logloss:0.339162
+        trees: 211, Out-of-bag evaluation: accuracy:0.935229 logloss:0.321464
+        trees: 221, Out-of-bag evaluation: accuracy:0.934966 logloss:0.322643
+        trees: 232, Out-of-bag evaluation: accuracy:0.934966 logloss:0.313156
+        trees: 242, Out-of-bag evaluation: accuracy:0.935492 logloss:0.276889
+        trees: 252, Out-of-bag evaluation: accuracy:0.935229 logloss:0.275535
+        trees: 262, Out-of-bag evaluation: accuracy:0.935229 logloss:0.272462
+        trees: 272, Out-of-bag evaluation: accuracy:0.934966 logloss:0.272691
+        trees: 282, Out-of-bag evaluation: accuracy:0.934702 logloss:0.265001
+        trees: 292, Out-of-bag evaluation: accuracy:0.935492 logloss:0.265644
+        trees: 300, Out-of-bag evaluation: accuracy:0.935229 logloss:0.266501
+
++++++++++++++++++ Evaluate +++++++++++++++++++
++++++++++++++++++  +++++++++++++++++++
+[0.         0.         0.         0.         0.         0.
+ 0.02       0.         0.         0.89666593 0.         0.9733325
+ 0.         0.         0.02666667 0.01666667 0.8933326  0.6533328
+ 0.96333253 0.98666584 0.98666584 0.9566659  0.7499994  0.13333328
+ 0.01666667 0.00666667 0.00333333 0.         0.01666667 0.00333333
+ 0.         0.         0.         0.         0.01333333 0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.00333333 0.         0.         0.         0.00333333 0.01666667
+ 0.18666656 0.9599992  0.15999992 0.03       0.00666667 0.04666667
+ 0.96666586 0.97666585 0.9499992  0.07       0.06333334 0.05333334
+ 0.04333334 0.00333333 0.03333334 0.08333332 0.9599992  0.9266659
+ 0.1466666  0.13333328 0.08666665 0.04       0.07       0.05333334
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.99666584 0.         0.8799993  0.         0.
+ 0.         0.         0.         0.1033333  0.         0.
+ 0.         0.         0.08333332 0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.9366659  0.01333333 0.99999917
+ 0.         0.99999917 0.99999917 0.99999917 0.99999917 0.
+ 0.8699993  0.         0.02333334 0.41666636 0.9799992  0.93333256
+ 0.96666586 0.8733326  0.3766664  0.05666667 0.05333334 0.27999982
+ 0.9399992  0.9366659  0.25333318 0.9233326  0.83333266 0.01666667
+ 0.06000001 0.1033333  0.15333326 0.32999977 0.9466659  0.9566659
+ 0.9366659  0.9066659  0.57999957 0.69999945 0.8399993  0.8733326
+ 0.89999926 0.02333334 0.         0.04666667 0.         0.
+ 0.         0.         0.         0.         0.         0.99666584
+ 0.99999917 0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.02333334 0.         0.         0.         0.         0.99999917
+ 0.99999917 0.         0.         0.         0.         0.
+ 0.00666667 0.6399995  0.26333317 0.68999946 0.72333276 0.5499996
+ 0.14999993 0.12999995 0.12999995 0.89666593 0.9166659  0.89666593
+ 0.23999985 0.07       0.01       0.         0.         0.01666667
+ 0.         0.00333333 0.         0.         0.         0.00666667
+ 0.         0.         0.13666661 0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.8833326  0.9499992  0.89999926 0.55666625 0.02666667
+ 0.02666667 0.04666667 0.02333334 0.06333334 0.15999992 0.826666
+ 0.826666   0.05666667 0.68999946 0.01666667 0.         0.01
+ 0.         0.         0.01       0.00333333 0.00333333 0.00666667
+ 0.         0.00333333 0.         0.         0.         0.
+ 0.00333333 0.         0.         0.         0.         0.00333333
+ 0.         0.13666661 0.00333333 0.         0.         0.
+ 0.         0.         0.         0.99999917 0.         0.
+ 0.03       0.         0.         0.         0.         0.
+ 0.7366661  0.03333334 0.99999917 0.99999917 0.99999917 0.99999917
+ 0.         0.99999917 0.99999917 0.99999917 0.         0.
+ 0.99999917 0.99999917 0.         0.99999917 0.99999917 0.99999917
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.00666667 0.00666667 0.35666642 0.05       0.07999999
+ 0.20333321 0.17666657 0.85666597 0.00666667 0.00666667 0.31999978
+ 0.00333333 0.01       0.00333333 0.         0.         0.
+ 0.75666606 0.99999917 0.99999917 0.99999917 0.         0.99999917
+ 0.         0.99999917 0.99999917 0.99999917 0.         0.
+ 0.99999917 0.         0.         0.         0.         0.99999917
+ 0.         0.         0.99999917 0.         0.99999917 0.99999917
+ 0.         0.99999917 0.99999917 0.         0.         0.99999917
+ 0.99999917 0.         0.99999917 0.         0.99999917 0.
+ 0.         0.99999917 0.         0.         0.         0.99999917
+ 0.         0.99999917 0.         0.99999917 0.         0.99999917
+ 0.99999917 0.         0.         0.99999917 0.99999917 0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.99999917 0.         0.         0.         0.
+ 0.         0.         0.         0.00333333 0.07       0.02
+ 0.08999998 0.00333333 0.6533328  0.         0.         0.
+ 0.         0.         0.         0.         0.7033328  0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.00333333 0.         0.         0.
+ 0.         0.         0.         0.00333333 0.01       0.09333331
+ 0.07333333 0.23666652 0.21666653 0.         0.         0.
+ 0.00333333 0.         0.         0.03666667 0.02666667 0.01
+ 0.01333333 0.02       0.01       0.         0.         0.00666667
+ 0.         0.00333333 0.         0.         0.75666606 0.99999917
+ 0.9933325  0.         0.99999917 0.99999917 0.99999917 0.99999917
+ 0.99999917 0.99999917 0.99999917 0.         0.99999917 0.99999917
+ 0.99999917 0.         0.         0.         0.99999917 0.
+ 0.99999917 0.99999917 0.99999917 0.         0.         0.99999917
+ 0.99999917 0.         0.99999917 0.99999917 0.         0.99999917
+ 0.         0.         0.99999917 0.99666584 0.99999917 0.9899992
+ 0.         0.         0.         0.         0.         0.99999917
+ 0.         0.00333333 0.         0.         0.         0.03333334
+ 0.05       0.05333334 0.05333334 0.04333334 0.02333334 0.03
+ 0.04       0.04       0.01       0.6966661  0.00333333 0.00333333
+ 0.         0.         0.         0.9933325  0.         0.9933325
+ 0.         0.         0.03333334 0.         0.         0.
+ 0.         0.         0.         0.         0.04       0.
+ 0.00333333 0.00333333 0.01333333 0.06333334 0.06333334 0.07333333
+ 0.06333334 0.06333334 0.02666667 0.         0.         0.
+ 0.99999917 0.         0.01333333 0.00333333 0.         0.01
+ 0.00333333 0.00666667 0.07       0.01666667 0.06666667 0.
+ 0.         0.06000001 0.00333333 0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.04       0.00333333 0.00333333 0.03333334 0.07999999
+ 0.10666663 0.10999996 0.00333333 0.02       0.00666667 0.00333333
+ 0.         0.         0.         0.         0.         0.01333333
+ 0.99999917 0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.99999917
+ 0.         0.         0.93333256 0.99999917 0.99999917 0.01666667
+ 0.         0.         0.         0.00333333 0.         0.
+ 0.00333333 0.         0.         0.2466665  0.19333322 0.6699995
+ 0.09666664 0.30666646 0.2999998  0.30666646 0.         0.73333275
+ 0.         0.         0.         0.01666667 0.         0.
+ 0.         0.         0.00333333 0.         0.         0.
+ 0.         0.00333333 0.00333333 0.         0.         0.
+ 0.00333333 0.28666648 0.21666653 0.01       0.00666667 0.63333285
+ 0.         0.         0.19333322 0.00333333 0.         0.
+ 0.00333333 0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.00666667 0.
+ 0.         0.         0.         0.01       0.99666584 0.99999917
+ 0.99999917 0.99999917 0.99999917 0.99999917 0.03333334 0.
+ 0.         0.99999917 0.         0.99999917 0.99999917 0.99999917
+ 0.99999917 0.         0.99999917 0.99999917 0.00666667 0.01
+ 0.99999917 0.99999917 0.99999917 0.99999917 0.99999917 0.
+ 0.01666667 0.8299993  0.00333333 0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.99999917 0.01333333 0.         0.         0.         0.
+ 0.00666667 0.01333333 0.00666667 0.01333333 0.02333334 0.01333333
+ 0.2766665  0.09333331 0.2899998  0.27333316 0.09333331 0.09333331
+ 0.29666647 0.00333333 0.2466665  0.2466665  0.02       0.
+ 0.         0.02       0.9799992  0.         0.         0.00333333
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.00333333 0.00333333 0.         0.
+ 0.         0.00333333 0.         0.         0.00666667 0.01
+ 0.05       0.20333321 0.3233331  0.2999998  0.28333315 0.08999998
+ 0.05       0.05333334 0.11999995 0.07999999 0.03       0.05
+ 0.         0.         0.         0.         0.         0.
+ 0.00666667 0.         0.         0.         0.         0.05333334
+ 0.         0.         0.         0.         0.         0.
+ 0.00666667 0.20333321 0.1899999  0.7499994  0.08999998 0.06333334
+ 0.02666667 0.08666665 0.00666667 0.         0.         0.
+ 0.         0.         0.         0.         0.02333334 0.9933325
+ 0.00333333 0.00333333 0.00333333 0.00333333 0.01       0.08666665
+ 0.10666663 0.11666662 0.01       0.09999997 0.1033333  0.10999996
+ 0.         0.09333331 0.         0.         0.99999917 0.00333333
+ 0.00333333 0.         0.         0.         0.02333334 0.05333334
+ 0.75333273 0.7499994  0.7466661  0.74333274 0.10999996 0.
+ 0.00333333 0.         0.         0.         0.99999917 0.99999917
+ 0.99999917 0.99999917 0.00333333 0.99999917 0.99999917 0.99999917
+ 0.99999917 0.99999917 0.99999917 0.99999917 0.         0.99999917
+ 0.99999917 0.99999917 0.99999917 0.         0.         0.99999917
+ 0.99999917 0.99666584 0.         0.99999917 0.99999917 0.99999917
+ 0.99999917 0.99999917 0.99999917 0.99999917 0.99999917 0.
+ 0.         0.         0.00333333 0.00333333 0.         0.64333284
+ 0.00333333 0.00333333 0.66666615 0.99666584]
+I0000 00:00:1739387828.443521   24364 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387828.443921   24364 model_analysis.cc:736] Run the model with the fast engine wrapper
+I0000 00:00:1739387828.445928   24364 partial_dependence_plot.cc:585] List plotting attribute combinations
+I0000 00:00:1739387828.446374   24364 partial_dependence_plot.cc:606] Found 52 combination(s)
+I0000 00:00:1739387828.446758   24364 partial_dependence_plot.cc:500] Initiate PDP accumulator
+I0000 00:00:1739387828.450064   24364 partial_dependence_plot.cc:505] Compute partial dependence plot for 52 set of features and 879 model call(s) per example.
+I0000 00:00:1739387828.450440   24364 partial_dependence_plot.cc:524] 1 examples scanned.
+I0000 00:00:1739387840.038611   24364 partial_dependence_plot.cc:585] List plotting attribute combinations
+I0000 00:00:1739387840.039000   24364 partial_dependence_plot.cc:606] Found 52 combination(s)
+I0000 00:00:1739387840.039258   24364 partial_dependence_plot.cc:544] Initiate CEP accumulator
+I0000 00:00:1739387840.041673   24364 partial_dependence_plot.cc:549] Compute conditional expectation plot for 52 set of features and 879 model call(s) per example. 
+I0000 00:00:1739387840.041927   24364 partial_dependence_plot.cc:568] 1 examples scanned.
+I0000 00:00:1739387840.092511   24364 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.092897   24364 abstract_model.cc:1404] Engine "RandomForestOptPred" built
+I0000 00:00:1739387840.112002   24364 feature_importance.cc:193] Running 53 features on 8 threads with 1 rounds
+I0000 00:00:1739387840.129352    5916 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.129352   20996 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.129353    7448 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.129353   30800 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.129353   13624 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.129352   11280 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.129353   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.135902   31264 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.181462   20996 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.187231   11280 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.187231   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.187231   31264 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.187231    5916 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.187230    7448 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.187230   30800 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.200784   13624 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.233326   20996 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.235606   11280 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.239414   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.239414    5916 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.250435   30800 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.253171   13624 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.253436    7448 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.287999   31264 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.295932   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.337281   20996 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.338508   11280 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.340612    5916 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.362302   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.364858   13624 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.379723   30800 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.384423   31264 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.389270    7448 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.397735   20996 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.410776   11280 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.423509   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.425223    5916 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.436975   13624 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.438810   31264 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.441476   30800 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.454771    7448 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.461446   20996 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.469980   11280 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.474389    5916 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.485268   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.494050   13624 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.496087   30800 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.498371   31264 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.508029    7448 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.530348   20996 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.541184   24284 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.544644    5916 decision_forest.cc:762] Model loaded with 300 root(s), 40124 node(s), and 42 input feature(s).
+I0000 00:00:1739387840.557651   24364 abstract_model.cc:914] Model self evaluation:
+Number of predictions (without weights): 3798
+Number of predictions (with weights): 3798
+Task: CLASSIFICATION
+Label: NST_B_Label
+
+Accuracy: 0.935229  CI95[W][0.928276 0.94168]
+LogLoss: : 0.266501
+ErrorRate: : 0.0647709
+
+Default Accuracy: : 0.73644
+Default LogLoss: : 0.576747
+Default ErrorRate: : 0.26356
+
+Confusion Table:
+truth\prediction
+          0    1
+    0  2775   22
+    1   224  777
+Total: 3798
+
+
+A model analysis. Use a notebook cell to display the analysis. Alternatively, export the analysis with `analysis.to_file("analysis.html")`.
+Single-thread inference time per example: 14.735 us (microseconds)
+Details: 204684 predictions in 0.000 seconds
+
+Multi-thread inference time per example: 2.845 us (microseconds)
+Details: 771714 predictions in 0.000 seconds using 8 threads
+
+* Measured with the C++ serving API. See model.to_cpp().
+PS C:\Users\andre\OneDrive\Documents\Dissertation\research\ICS Incident Response\ML\code\ML Test> & C:/Users/andre/AppData/Local/Microsoft/WindowsApps/python3.12.exe
+ "c:/Users/andre/OneDrive/Documents/Dissertation/research/ICS Incident Response/ML/code/ML Test/ML Test/test_train_RF.py"
