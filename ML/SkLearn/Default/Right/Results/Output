@@ -1,1 +1,65 @@
+total dataframe : (4720, 52)
+x data, y data (4720, 51) (4720,)
+xtrain (3776, 51) xtest (944, 51) ytrain (3776,) ytest (944,)
+xtrain              0             1            2            3         4    5    6      7    8      9   10     11  12     13  14  ...  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50
+0  1.678442e+09  1.678442e+09  1436.603164  1436.603164  0.000001  1.0  0.0  114.0  0.0  114.0 NaN  114.0 NaN  114.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+1  1.678443e+09  1.678443e+09  2816.658521  2816.658521  0.000001  1.0  0.0  114.0  0.0  114.0 NaN  114.0 NaN  114.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+2  1.678442e+09  1.678442e+09  1611.799041  1611.799043  0.000003  2.0  0.0  120.0  0.0   60.0 NaN   60.0 NaN   60.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+3  1.678443e+09  1.678443e+09  2403.340157  2403.340159  0.000003  2.0  0.0  120.0  0.0   60.0 NaN   60.0 NaN   60.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+4  1.678445e+09  1.678445e+09  4448.262248  4448.262250  0.000003  2.0  0.0  120.0  0.0   60.0 NaN   60.0 NaN   60.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+
+[5 rows x 51 columns]
+xtest              0             1            2            3         4    5    6      7    8      9   10     11  12     13  14  ...  36  37  38  39  40  41  42   43  44  45  46  47  48  49  50
+0  1.678444e+09  1.678444e+09  3748.332381  3748.332381  0.000001  1.0  0.0  102.0  0.0  102.0 NaN  102.0 NaN  102.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN  NaN NaN NaN NaN NaN NaN NaN NaN
+1  1.678444e+09  1.678444e+09  3409.928342  3409.928343  0.000002  2.0  0.0  120.0  0.0   60.0 NaN   60.0 NaN   60.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN  NaN NaN NaN NaN NaN NaN NaN NaN
+2  1.678445e+09  1.678445e+09  3938.766035  3938.766036  0.000002  2.0  0.0  656.0  0.0  328.0 NaN  328.0 NaN  328.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN  0.0 NaN NaN NaN NaN NaN NaN NaN
+3  1.678444e+09  1.678444e+09  3325.626378  3325.632436  0.006059  4.0  0.0  240.0  0.0   60.0 NaN   60.0 NaN   60.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN  NaN NaN NaN NaN NaN NaN NaN NaN
+4  1.678445e+09  1.678445e+09  4122.630321  4122.630324  0.000004  2.0  0.0  120.0  0.0   60.0 NaN   60.0 NaN   60.0 NaN  ... NaN NaN NaN NaN NaN NaN NaN  NaN NaN NaN NaN NaN NaN NaN NaN
+
+[5 rows x 51 columns]
+ytrain      0
+0  0.0
+1  0.0
+2  0.0
+3  0.0
+4  0.0
+ytest      0
+0  0.0
+1  1.0
+2  0.0
+3  1.0
+4  0.0
+building tree 1 of 25
+building tree 2 of 25
+building tree 3 of 25
+building tree 4 of 25
+building tree 5 of 25
+building tree 6 of 25
+building tree 7 of 25
+building tree 8 of 25
+building tree 9 of 25
+building tree 10 of 25
+building tree 11 of 25
+building tree 12 of 25
+building tree 13 of 25
+building tree 14 of 25
+building tree 15 of 25
+building tree 16 of 25
+building tree 17 of 25
+building tree 18 of 25
+building tree 19 of 25
+building tree 20 of 25
+building tree 21 of 25
+building tree 22 of 25
+building tree 23 of 25
+building tree 24 of 25
+building tree 25 of 25
++++++++++++++++++ RF Model +++++++++++++++++++
+Accuracy: 0.9173728813559322
+Precision: 0.852
+Recall: 0.8385826771653543
+ROC
+AUC - ROC Score: 0.96
+F1 Score: 0.85
+CM
 
