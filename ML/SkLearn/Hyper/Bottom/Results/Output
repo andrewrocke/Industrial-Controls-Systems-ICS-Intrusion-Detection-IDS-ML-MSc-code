@@ -1,1 +1,10 @@
-
++++++++++++++++++ RF Model +++++++++++++++++++
+Accuracy: 0.9083462787741844
+Precision: 0.9667721518987342
+Recall: 0.49313962873284906
+ROC
+AUC - ROC Score: 0.96
+F1 Score: 0.65
+CM
+SearchCV
+Best hyperparameters: {'max_depth': 17, 'n_estimators': 133}
