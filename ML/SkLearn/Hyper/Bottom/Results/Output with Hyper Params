@@ -1,1 +1,179 @@
+total dataframe : (35404, 52)
+x data, y data (35404, 51) (35404,)
+xtrain (28323, 51) xtest (7081, 51) ytrain (28323,) ytest (7081,)
+xtrain              0             1            2            3         4     5     6       7       8     9     10  ...   40     41       42   43   44     45     46     47   48        49        50
+0  1.678445e+09  1.678445e+09  4130.879444  4130.925859  0.046416  10.0  18.0   650.0  1056.0  65.0  64.0  ...  0.0  509.0  502.000  0.0  0.0  0.001  0.041  0.000  0.0  0.000486  0.005609
+1  1.678441e+09  1.678441e+09   469.333897   469.833608  0.499712  18.0  32.0  1170.0  1856.0  65.0  64.0  ...  0.0  509.0  502.000  0.0  0.0  0.001  0.492  0.000  0.0  0.000508  0.031128
+2  1.678442e+09  1.678442e+09  1572.628598  1573.099599  0.471002  42.0  30.0  2478.0  1866.0  65.0  65.0  ...  0.0  503.0  506.200  0.0  0.0  0.197  0.199  0.000  0.0  0.022395  0.028891
+3  1.678442e+09  1.678442e+09  1451.697738  1452.101491  0.403754  40.0  26.0  2348.0  1634.0  65.0  65.0  ...  0.0  502.7  506.846  0.0  0.0  0.198  0.199  0.001  0.0  0.021310  0.017034
+4  1.678443e+09  1.678443e+09  2364.352837  2364.852669  0.499833  16.0  28.0  1040.0  1648.0  65.0  64.0  ...  0.0  509.0  502.000  0.0  0.0  0.001  0.491  0.000  0.0  0.000540  0.044974
 
+[5 rows x 51 columns]
+xtest              0             1            2            3         4     5     6       7       8     9     10  ...   40     41     42   43   44     45     46   47   48        49        50
+0  1.678442e+09  1.678442e+09  1582.852834  1583.352683  0.499850  16.0  32.0  1040.0  1856.0  65.0  64.0  ...  0.0  509.0  502.0  0.0  0.0  0.001  0.492  0.0  0.0  0.000512  0.033186
+1  1.678442e+09  1.678442e+09  1373.828722  1374.301426  0.472705  42.0  30.0  2478.0  1866.0  65.0  65.0  ...  0.0  503.0  506.2  0.0  0.0  0.197  0.199  0.0  0.0  0.020316  0.028863
+2  1.678441e+09  1.678441e+09   740.840403   740.845501  0.005099  10.0  20.0   650.0  1160.0  65.0  64.0  ...  0.0  509.0  502.0  0.0  0.0  0.001  0.001  0.0  0.0  0.000559  0.000379
+3  1.678445e+09  1.678445e+09  4665.845286  4666.344876  0.499591  16.0  32.0  1040.0  1856.0  65.0  64.0  ...  0.0  509.0  502.0  0.0  0.0  0.001  0.492  0.0  0.0  0.000574  0.031117
+4  1.678446e+09  1.678446e+09  5160.388332  5160.859062  0.470731  20.0  40.0  1300.0  2320.0  65.0  64.0  ...  0.0  509.0  502.0  0.0  0.0  0.001  0.460  0.0  0.0  0.000525  0.026869
+
+[5 rows x 51 columns]
+ytrain      0
+0  0.0
+1  0.0
+2  0.0
+3  0.0
+4  0.0
+ytest      0
+0  0.0
+1  0.0
+2  0.0
+3  0.0
+4  0.0
+building tree 1 of 133
+building tree 2 of 133
+building tree 3 of 133
+building tree 4 of 133
+building tree 5 of 133
+building tree 6 of 133
+building tree 7 of 133
+building tree 8 of 133
+building tree 9 of 133
+building tree 10 of 133
+building tree 11 of 133
+building tree 12 of 133
+building tree 13 of 133
+building tree 14 of 133
+building tree 15 of 133
+building tree 16 of 133
+building tree 17 of 133
+building tree 18 of 133
+building tree 19 of 133
+building tree 20 of 133
+building tree 21 of 133
+building tree 22 of 133
+building tree 23 of 133
+building tree 24 of 133
+building tree 25 of 133
+building tree 26 of 133
+building tree 27 of 133
+building tree 28 of 133
+building tree 29 of 133
+building tree 30 of 133
+building tree 31 of 133
+[Parallel(n_jobs=1)]: Done  31 tasks      | elapsed:    2.2s
+building tree 32 of 133
+building tree 33 of 133
+building tree 34 of 133
+building tree 35 of 133
+building tree 36 of 133
+building tree 37 of 133
+building tree 38 of 133
+building tree 39 of 133
+building tree 40 of 133
+building tree 41 of 133
+building tree 42 of 133
+building tree 43 of 133
+building tree 44 of 133
+building tree 45 of 133
+building tree 46 of 133
+building tree 47 of 133
+building tree 48 of 133
+building tree 49 of 133
+building tree 50 of 133
+building tree 51 of 133
+building tree 52 of 133
+building tree 53 of 133
+building tree 54 of 133
+building tree 55 of 133
+building tree 56 of 133
+building tree 57 of 133
+building tree 58 of 133
+building tree 59 of 133
+building tree 60 of 133
+building tree 61 of 133
+building tree 62 of 133
+building tree 63 of 133
+building tree 64 of 133
+building tree 65 of 133
+building tree 66 of 133
+building tree 67 of 133
+building tree 68 of 133
+building tree 69 of 133
+building tree 70 of 133
+building tree 71 of 133
+building tree 72 of 133
+building tree 73 of 133
+building tree 74 of 133
+building tree 75 of 133
+building tree 76 of 133
+building tree 77 of 133
+building tree 78 of 133
+building tree 79 of 133
+building tree 80 of 133
+building tree 81 of 133
+building tree 82 of 133
+building tree 83 of 133
+building tree 84 of 133
+building tree 85 of 133
+building tree 86 of 133
+building tree 87 of 133
+building tree 88 of 133
+building tree 89 of 133
+building tree 90 of 133
+building tree 91 of 133
+building tree 92 of 133
+building tree 93 of 133
+building tree 94 of 133
+building tree 95 of 133
+building tree 96 of 133
+building tree 97 of 133
+building tree 98 of 133
+building tree 99 of 133
+building tree 100 of 133
+building tree 101 of 133
+building tree 102 of 133
+building tree 103 of 133
+building tree 104 of 133
+building tree 105 of 133
+building tree 106 of 133
+building tree 107 of 133
+building tree 108 of 133
+building tree 109 of 133
+building tree 110 of 133
+building tree 111 of 133
+building tree 112 of 133
+building tree 113 of 133
+building tree 114 of 133
+building tree 115 of 133
+building tree 116 of 133
+building tree 117 of 133
+building tree 118 of 133
+building tree 119 of 133
+building tree 120 of 133
+building tree 121 of 133
+building tree 122 of 133
+building tree 123 of 133
+building tree 124 of 133
+building tree 125 of 133
+building tree 126 of 133
+building tree 127 of 133
+[Parallel(n_jobs=1)]: Done 127 tasks      | elapsed:    9.2s
+building tree 128 of 133
+building tree 129 of 133
+building tree 130 of 133
+building tree 131 of 133
+building tree 132 of 133
+building tree 133 of 133
+[Parallel(n_jobs=1)]: Done  31 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=1)]: Done 127 tasks      | elapsed:    0.0s
++++++++++++++++++ RF Model +++++++++++++++++++
+Accuracy: 0.9025561361389635
+Precision: 0.9613445378151261
+Recall: 0.46166263115415657
+ROC
+[Parallel(n_jobs=1)]: Done  31 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=1)]: Done 127 tasks      | elapsed:    0.0s
+AUC - ROC Score: 0.95
+F1 Score: 0.62
+CM
+PS C:\Users\andre\OneDrive\Documents\Dissertation\research\ICS Incident Response\ML\code\ML Test> 
