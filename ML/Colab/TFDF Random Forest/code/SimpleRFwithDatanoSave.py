@@ -13,7 +13,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt # Import matplotlib
 
 
-ds = pd.read_csv("/output_left_singlelabel_add_del_NST.csv")
+ds = pd.read_csv("output_left_singlelabel_add_del_NST.csv")
 print("total dataframe :",ds.shape)
 #print(list(ds))
 #print(ds.head())
