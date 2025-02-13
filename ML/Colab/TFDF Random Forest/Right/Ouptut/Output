@@ -1,0 +1,273 @@
+total dataframe : (4720, 52)
+Use 2 thread(s) for training
+Use /tmp/tmpmpslxpjt as temporary training directory
+Reading training dataset...
+Training tensor examples:
+Features: {'start': <tf.Tensor 'data:0' shape=(None,) dtype=float64>, 'end': <tf.Tensor 'data_1:0' shape=(None,) dtype=float64>, 'startOffset': <tf.Tensor 'data_2:0' shape=(None,) dtype=float64>, 'endOffset': <tf.Tensor 'data_3:0' shape=(None,) dtype=float64>, 'duration': <tf.Tensor 'data_4:0' shape=(None,) dtype=float64>, 'sPackets': <tf.Tensor 'data_5:0' shape=(None,) dtype=int64>, 'rPackets': <tf.Tensor 'data_6:0' shape=(None,) dtype=int64>, 'sBytesSum': <tf.Tensor 'data_7:0' shape=(None,) dtype=int64>, 'rBytesSum': <tf.Tensor 'data_8:0' shape=(None,) dtype=int64>, 'sBytesMax': <tf.Tensor 'data_9:0' shape=(None,) dtype=float64>, 'rBytesMax': <tf.Tensor 'data_10:0' shape=(None,) dtype=float64>, 'sBytesMin': <tf.Tensor 'data_11:0' shape=(None,) dtype=float64>, 'rBytesMin': <tf.Tensor 'data_12:0' shape=(None,) dtype=float64>, 'sBytesAvg': <tf.Tensor 'data_13:0' shape=(None,) dtype=float64>, 'rBytesAvg': <tf.Tensor 'data_14:0' shape=(None,) dtype=float64>, 'sLoad': <tf.Tensor 'data_15:0' shape=(None,) dtype=float64>, 'rLoad': <tf.Tensor 'data_16:0' shape=(None,) dtype=float64>, 'sPayloadSum': <tf.Tensor 'data_17:0' shape=(None,) dtype=int64>, 'rPayloadSum': <tf.Tensor 'data_18:0' shape=(None,) dtype=int64>, 'sPayloadMax': <tf.Tensor 'data_19:0' shape=(None,) dtype=float64>, 'rPayloadMax': <tf.Tensor 'data_20:0' shape=(None,) dtype=float64>, 'sPayloadMin': <tf.Tensor 'data_21:0' shape=(None,) dtype=float64>, 'rPayloadMin': <tf.Tensor 'data_22:0' shape=(None,) dtype=float64>, 'sPayloadAvg': <tf.Tensor 'data_23:0' shape=(None,) dtype=float64>, 'rPayloadAvg': <tf.Tensor 'data_24:0' shape=(None,) dtype=float64>, 'sInterPacketAvg': <tf.Tensor 'data_25:0' shape=(None,) dtype=float64>, 'rInterPacketAvg': <tf.Tensor 'data_26:0' shape=(None,) dtype=float64>, 'sttl': <tf.Tensor 'data_27:0' shape=(None,) dtype=float64>, 'rttl': <tf.Tensor 'data_28:0' shape=(None,) dtype=float64>, 'sAckRate': <tf.Tensor 'data_29:0' shape=(None,) dtype=float64>, 'rAckRate': <tf.Tensor 'data_30:0' shape=(None,) dtype=float64>, 'sUrgRate': <tf.Tensor 'data_31:0' shape=(None,) dtype=float64>, 'rUrgRate': <tf.Tensor 'data_32:0' shape=(None,) dtype=float64>, 'sFinRate': <tf.Tensor 'data_33:0' shape=(None,) dtype=float64>, 'rFinRate': <tf.Tensor 'data_34:0' shape=(None,) dtype=float64>, 'sPshRate': <tf.Tensor 'data_35:0' shape=(None,) dtype=float64>, 'rPshRate': <tf.Tensor 'data_36:0' shape=(None,) dtype=float64>, 'sSynRate': <tf.Tensor 'data_37:0' shape=(None,) dtype=float64>, 'rSynRate': <tf.Tensor 'data_38:0' shape=(None,) dtype=float64>, 'sRstRate': <tf.Tensor 'data_39:0' shape=(None,) dtype=float64>, 'rRstRate': <tf.Tensor 'data_40:0' shape=(None,) dtype=float64>, 'sWinTCP': <tf.Tensor 'data_41:0' shape=(None,) dtype=float64>, 'rWinTCP': <tf.Tensor 'data_42:0' shape=(None,) dtype=float64>, 'sFragmentRate': <tf.Tensor 'data_43:0' shape=(None,) dtype=float64>, 'rFragmentRate': <tf.Tensor 'data_44:0' shape=(None,) dtype=float64>, 'sAckDelayMax': <tf.Tensor 'data_45:0' shape=(None,) dtype=float64>, 'rAckDelayMax': <tf.Tensor 'data_46:0' shape=(None,) dtype=float64>, 'sAckDelayMin': <tf.Tensor 'data_47:0' shape=(None,) dtype=float64>, 'rAckDelayMin': <tf.Tensor 'data_48:0' shape=(None,) dtype=float64>, 'sAckDelayAvg': <tf.Tensor 'data_49:0' shape=(None,) dtype=float64>, 'rAckDelayAvg': <tf.Tensor 'data_50:0' shape=(None,) dtype=float64>}
+Label: Tensor("data_51:0", shape=(None,), dtype=int64)
+Weights: None
+Normalized tensor features:
+ {'start': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast:0' shape=(None,) dtype=float32>), 'end': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_1:0' shape=(None,) dtype=float32>), 'startOffset': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_2:0' shape=(None,) dtype=float32>), 'endOffset': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_3:0' shape=(None,) dtype=float32>), 'duration': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_4:0' shape=(None,) dtype=float32>), 'sPackets': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_5:0' shape=(None,) dtype=float32>), 'rPackets': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_6:0' shape=(None,) dtype=float32>), 'sBytesSum': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_7:0' shape=(None,) dtype=float32>), 'rBytesSum': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_8:0' shape=(None,) dtype=float32>), 'sBytesMax': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_9:0' shape=(None,) dtype=float32>), 'rBytesMax': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_10:0' shape=(None,) dtype=float32>), 'sBytesMin': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_11:0' shape=(None,) dtype=float32>), 'rBytesMin': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_12:0' shape=(None,) dtype=float32>), 'sBytesAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_13:0' shape=(None,) dtype=float32>), 'rBytesAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_14:0' shape=(None,) dtype=float32>), 'sLoad': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_15:0' shape=(None,) dtype=float32>), 'rLoad': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_16:0' shape=(None,) dtype=float32>), 'sPayloadSum': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_17:0' shape=(None,) dtype=float32>), 'rPayloadSum': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_18:0' shape=(None,) dtype=float32>), 'sPayloadMax': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_19:0' shape=(None,) dtype=float32>), 'rPayloadMax': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_20:0' shape=(None,) dtype=float32>), 'sPayloadMin': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_21:0' shape=(None,) dtype=float32>), 'rPayloadMin': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_22:0' shape=(None,) dtype=float32>), 'sPayloadAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_23:0' shape=(None,) dtype=float32>), 'rPayloadAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_24:0' shape=(None,) dtype=float32>), 'sInterPacketAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_25:0' shape=(None,) dtype=float32>), 'rInterPacketAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_26:0' shape=(None,) dtype=float32>), 'sttl': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_27:0' shape=(None,) dtype=float32>), 'rttl': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_28:0' shape=(None,) dtype=float32>), 'sAckRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_29:0' shape=(None,) dtype=float32>), 'rAckRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_30:0' shape=(None,) dtype=float32>), 'sUrgRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_31:0' shape=(None,) dtype=float32>), 'rUrgRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_32:0' shape=(None,) dtype=float32>), 'sFinRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_33:0' shape=(None,) dtype=float32>), 'rFinRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_34:0' shape=(None,) dtype=float32>), 'sPshRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_35:0' shape=(None,) dtype=float32>), 'rPshRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_36:0' shape=(None,) dtype=float32>), 'sSynRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_37:0' shape=(None,) dtype=float32>), 'rSynRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_38:0' shape=(None,) dtype=float32>), 'sRstRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_39:0' shape=(None,) dtype=float32>), 'rRstRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_40:0' shape=(None,) dtype=float32>), 'sWinTCP': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_41:0' shape=(None,) dtype=float32>), 'rWinTCP': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_42:0' shape=(None,) dtype=float32>), 'sFragmentRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_43:0' shape=(None,) dtype=float32>), 'rFragmentRate': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_44:0' shape=(None,) dtype=float32>), 'sAckDelayMax': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_45:0' shape=(None,) dtype=float32>), 'rAckDelayMax': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_46:0' shape=(None,) dtype=float32>), 'sAckDelayMin': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_47:0' shape=(None,) dtype=float32>), 'rAckDelayMin': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_48:0' shape=(None,) dtype=float32>), 'sAckDelayAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_49:0' shape=(None,) dtype=float32>), 'rAckDelayAvg': SemanticTensor(semantic=<Semantic.NUMERICAL: 1>, tensor=<tf.Tensor 'Cast_50:0' shape=(None,) dtype=float32>)}
+Training dataset read in 0:00:00.525502. Found 3815 examples.
+Training model...
+I0000 00:00:1739479542.118494    2862 kernel.cc:782] Start Yggdrasil model training
+I0000 00:00:1739479542.118533    2862 kernel.cc:783] Collect training examples
+I0000 00:00:1739479542.118544    2862 kernel.cc:795] Dataspec guide:
+column_guides {
+  column_name_pattern: "^__LABEL$"
+  type: CATEGORICAL
+  categorial {
+    min_vocab_frequency: 0
+    max_vocab_count: -1
+  }
+}
+default_column_guide {
+  categorial {
+    max_vocab_count: 2000
+  }
+  discretized_numerical {
+    maximum_num_bins: 255
+  }
+}
+ignore_columns_without_guides: false
+detect_numerical_as_discretized_numerical: false
+
+I0000 00:00:1739479542.118819    2862 kernel.cc:401] Number of batches: 4
+I0000 00:00:1739479542.118832    2862 kernel.cc:402] Number of examples: 3815
+I0000 00:00:1739479542.120657    2862 kernel.cc:802] Training dataset:
+Number of records: 3815
+Number of columns: 52
+
+Number of columns by type:
+	NUMERICAL: 51 (98.0769%)
+	CATEGORICAL: 1 (1.92308%)
+
+Columns:
+
+NUMERICAL: 51 (98.0769%)
+	1: "duration" NUMERICAL mean:0.0462992 min:1e-06 max:0.499948 sd:0.1301
+	2: "end" NUMERICAL mean:1.67844e+09 min:1.67844e+09 max:1.67845e+09 sd:15492.8
+	3: "endOffset" NUMERICAL mean:2781.6 min:2e-06 max:5443.59 sd:1547.73
+	4: "rAckDelayAvg" NUMERICAL num-nas:3505 (91.8742%) mean:0.000763119 min:0.000179 max:0.005754 sd:0.00055189
+	5: "rAckDelayMax" NUMERICAL num-nas:3505 (91.8742%) mean:0.00336452 min:0 max:0.098 sd:0.0074344
+	6: "rAckDelayMin" NUMERICAL num-nas:3505 (91.8742%) mean:4.83871e-05 min:0 max:0.001 sd:0.000214583
+	7: "rAckRate" NUMERICAL num-nas:3386 (88.7549%) mean:0.420352 min:0 max:1 sd:0.428242
+	8: "rBytesAvg" NUMERICAL num-nas:3366 (88.2307%) mean:84.3958 min:36 max:294.833 sd:60.8053
+	9: "rBytesMax" NUMERICAL num-nas:3366 (88.2307%) mean:343.292 min:36 max:1412 sd:537.287
+	10: "rBytesMin" NUMERICAL num-nas:3366 (88.2307%) mean:50.7884 min:36 max:233 sd:25.1395
+	11: "rBytesSum" NUMERICAL mean:230.496 min:0 max:7920 sd:805.664
+	12: "rFinRate" NUMERICAL num-nas:3386 (88.7549%) mean:0.0353916 min:0 max:0.5 sd:0.10109
+	13: "rFragmentRate" NUMERICAL num-nas:3377 (88.519%) mean:0 min:0 max:0 sd:0
+	14: "rInterPacketAvg" NUMERICAL num-nas:3378 (88.5452%) mean:0.0203564 min:6.35783e-07 max:0.121961 sd:0.0186583
+	15: "rLoad" NUMERICAL mean:3.22799e+06 min:0 max:2.69111e+09 sd:6.75541e+07
+	16: "rPackets" NUMERICAL mean:3.80891 min:0 max:180 sd:15.341
+	17: "rPayloadAvg" NUMERICAL num-nas:3366 (88.2307%) mean:35.8321 min:0 max:241.5 sd:59.4993
+	18: "rPayloadMax" NUMERICAL num-nas:3366 (88.2307%) mean:295.318 min:0 max:1360 sd:535.227
+	19: "rPayloadMin" NUMERICAL num-nas:3366 (88.2307%) mean:3.67038 min:0 max:205 sd:27.1191
+	20: "rPayloadSum" NUMERICAL mean:56.3148 min:0 max:3338 sd:325.325
+	21: "rPshRate" NUMERICAL num-nas:3386 (88.7549%) mean:0.193079 min:0 max:0.714 sd:0.221805
+	22: "rRstRate" NUMERICAL num-nas:3386 (88.7549%) mean:0.00718415 min:0 max:0.25 sd:0.021978
+	23: "rSynRate" NUMERICAL num-nas:3386 (88.7549%) mean:0.572471 min:0 max:1 sd:0.421711
+	24: "rUrgRate" NUMERICAL num-nas:3386 (88.7549%) mean:0 min:0 max:0 sd:0
+	25: "rWinTCP" NUMERICAL num-nas:3386 (88.7549%) mean:6202.81 min:500 max:64240 sd:8376.09
+	26: "rttl" NUMERICAL num-nas:3386 (88.7549%) mean:56.1973 min:45.125 max:64 sd:7.91355
+	27: "sAckDelayAvg" NUMERICAL num-nas:3600 (94.3644%) mean:0.0111846 min:0.000262 max:0.077865 sd:0.0135569
+	28: "sAckDelayMax" NUMERICAL num-nas:3600 (94.3644%) mean:0.0805116 min:0.001 max:0.495 sd:0.113168
+	29: "sAckDelayMin" NUMERICAL num-nas:3600 (94.3644%) mean:0.000255814 min:0 max:0.038 sd:0.00259421
+	30: "sAckRate" NUMERICAL num-nas:3504 (91.848%) mean:0.966019 min:0.667 max:1 sd:0.0709895
+	31: "sBytesAvg" NUMERICAL num-nas:128 (3.35518%) mean:83.8725 min:36 max:560.909 sd:70.2483
+	32: "sBytesMax" NUMERICAL num-nas:128 (3.35518%) mean:99.1614 min:36 max:1500 sd:114.299
+	33: "sBytesMin" NUMERICAL num-nas:128 (3.35518%) mean:80.5999 min:36 max:328 sd:69.3018
+	34: "sBytesSum" NUMERICAL mean:216.828 min:0 max:12340 sd:429.452
+	35: "sFinRate" NUMERICAL num-nas:3504 (91.848%) mean:0.0846077 min:0 max:0.5 sd:0.127297
+	36: "sFragmentRate" NUMERICAL num-nas:2897 (75.9371%) mean:0 min:0 max:0 sd:0
+	37: "sInterPacketAvg" NUMERICAL num-nas:1022 (26.789%) mean:0.00417348 min:0 max:0.20656 sd:0.015443
+	38: "sLoad" NUMERICAL mean:4.57708e+08 min:0 max:5.248e+09 sd:4.99994e+08
+	39: "sPackets" NUMERICAL mean:2.36566 min:0 max:30 sd:2.8994
+	40: "sPayloadAvg" NUMERICAL num-nas:128 (3.35518%) mean:23.6726 min:0 max:508.909 sd:76.4881
+	41: "sPayloadMax" NUMERICAL num-nas:128 (3.35518%) mean:38.8755 min:0 max:1448 sd:119.331
+	42: "sPayloadMin" NUMERICAL num-nas:128 (3.35518%) mean:20.6949 min:0 max:300 sd:75.188
+	43: "sPayloadSum" NUMERICAL mean:81.7756 min:0 max:11196 sd:334.818
+	44: "sPshRate" NUMERICAL num-nas:3504 (91.848%) mean:0.177678 min:0 max:1 sd:0.204905
+	45: "sRstRate" NUMERICAL num-nas:3504 (91.848%) mean:0.0891222 min:0 max:0.4 sd:0.13335
+	46: "sSynRate" NUMERICAL num-nas:3504 (91.848%) mean:0.425174 min:0 max:1 sd:0.3971
+	47: "sUrgRate" NUMERICAL num-nas:3504 (91.848%) mean:0 min:0 max:0 sd:0
+	48: "sWinTCP" NUMERICAL num-nas:3504 (91.848%) mean:10603.4 min:7240 max:14600 sd:2700.06
+	49: "start" NUMERICAL mean:1.67844e+09 min:1.67844e+09 max:1.67845e+09 sd:14441.4
+	50: "startOffset" NUMERICAL mean:2781.56 min:0 max:5443.59 sd:1547.71
+	51: "sttl" NUMERICAL num-nas:3504 (91.848%) mean:64 min:64 max:64 sd:0
+
+CATEGORICAL: 1 (1.92308%)
+	0: "__LABEL" CATEGORICAL integerized vocab-size:3 no-ood-item
+
+Terminology:
+	nas: Number of non-available (i.e. missing) values.
+	ood: Out of dictionary.
+	manually-defined: Attribute whose type is manually defined by the user, i.e., the type was not automatically inferred.
+	tokenized: The attribute value is obtained through tokenization.
+	has-dict: The attribute is attached to a string dictionary e.g. a categorical attribute stored as a string.
+	vocab-size: Number of unique values.
+
+I0000 00:00:1739479542.120867    2862 kernel.cc:818] Configure learner
+I0000 00:00:1739479542.121107    2862 kernel.cc:831] Training config:
+learner: "RANDOM_FOREST"
+features: "^duration$"
+features: "^end$"
+features: "^endOffset$"
+features: "^rAckDelayAvg$"
+features: "^rAckDelayMax$"
+features: "^rAckDelayMin$"
+features: "^rAckRate$"
+features: "^rBytesAvg$"
+features: "^rBytesMax$"
+features: "^rBytesMin$"
+features: "^rBytesSum$"
+features: "^rFinRate$"
+features: "^rFragmentRate$"
+features: "^rInterPacketAvg$"
+features: "^rLoad$"
+features: "^rPackets$"
+features: "^rPayloadAvg$"
+features: "^rPayloadMax$"
+features: "^rPayloadMin$"
+features: "^rPayloadSum$"
+features: "^rPshRate$"
+features: "^rRstRate$"
+features: "^rSynRate$"
+features: "^rUrgRate$"
+features: "^rWinTCP$"
+features: "^rttl$"
+features: "^sAckDelayAvg$"
+features: "^sAckDelayMax$"
+features: "^sAckDelayMin$"
+features: "^sAckRate$"
+features: "^sBytesAvg$"
+features: "^sBytesMax$"
+features: "^sBytesMin$"
+features: "^sBytesSum$"
+features: "^sFinRate$"
+features: "^sFragmentRate$"
+features: "^sInterPacketAvg$"
+features: "^sLoad$"
+features: "^sPackets$"
+features: "^sPayloadAvg$"
+features: "^sPayloadMax$"
+features: "^sPayloadMin$"
+features: "^sPayloadSum$"
+features: "^sPshRate$"
+features: "^sRstRate$"
+features: "^sSynRate$"
+features: "^sUrgRate$"
+features: "^sWinTCP$"
+features: "^start$"
+features: "^startOffset$"
+features: "^sttl$"
+label: "^__LABEL$"
+task: CLASSIFICATION
+random_seed: 123456
+metadata {
+  framework: "TF Keras"
+}
+pure_serving_model: false
+[yggdrasil_decision_forests.model.random_forest.proto.random_forest_config] {
+  num_trees: 300
+  decision_tree {
+    max_depth: 16
+    min_examples: 5
+    in_split_min_examples_check: true
+    keep_non_leaf_label_distribution: true
+    num_candidate_attributes: 0
+    missing_value_policy: GLOBAL_IMPUTATION
+    allow_na_conditions: false
+    categorical_set_greedy_forward {
+      sampling: 0.1
+      max_num_items: -1
+      min_item_frequency: 1
+    }
+    growing_strategy_local {
+    }
+    categorical {
+      cart {
+      }
+    }
+    axis_aligned_split {
+    }
+    internal {
+      sorting_strategy: PRESORTED
+    }
+    uplift {
+      min_examples_in_treatment: 5
+      split_score: KULLBACK_LEIBLER
+    }
+  }
+  winner_take_all_inference: true
+  compute_oob_performances: true
+  compute_oob_variable_importances: false
+  num_oob_variable_importances_permutations: 1
+  bootstrap_training_dataset: true
+  bootstrap_size_ratio: 1
+  adapt_bootstrap_size_ratio_for_maximum_training_duration: false
+  sampling_with_replacement: true
+}
+
+I0000 00:00:1739479542.121205    2862 kernel.cc:834] Deployment config:
+cache_path: "/tmp/tmpmpslxpjt/working_cache"
+num_threads: 2
+try_resume_training: true
+
+I0000 00:00:1739479542.122039    4075 kernel.cc:895] Train model
+I0000 00:00:1739479542.122492    4075 random_forest.cc:427] Training random forest on 3815 example(s) and 51 feature(s).
+I0000 00:00:1739479542.143402    4078 random_forest.cc:811] Training of tree  1/300 (tree index:0) done accuracy:0.91404 logloss:3.09831
+I0000 00:00:1739479542.214850    4078 random_forest.cc:811] Training of tree  11/300 (tree index:10) done accuracy:0.920622 logloss:1.43377
+I0000 00:00:1739479542.283112    4079 random_forest.cc:811] Training of tree  21/300 (tree index:20) done accuracy:0.923984 logloss:1.10163
+I0000 00:00:1739479542.351776    4079 random_forest.cc:811] Training of tree  31/300 (tree index:30) done accuracy:0.926606 logloss:0.846648
+I0000 00:00:1739479542.418923    4079 random_forest.cc:811] Training of tree  41/300 (tree index:40) done accuracy:0.924246 logloss:0.767066
+I0000 00:00:1739479542.492757    4079 random_forest.cc:811] Training of tree  51/300 (tree index:50) done accuracy:0.925033 logloss:0.736993
+I0000 00:00:1739479542.562261    4079 random_forest.cc:811] Training of tree  61/300 (tree index:60) done accuracy:0.924246 logloss:0.591773
+I0000 00:00:1739479542.637276    4079 random_forest.cc:811] Training of tree  71/300 (tree index:70) done accuracy:0.924771 logloss:0.522462
+I0000 00:00:1739479542.716234    4079 random_forest.cc:811] Training of tree  81/300 (tree index:80) done accuracy:0.923722 logloss:0.433189
+I0000 00:00:1739479542.784648    4079 random_forest.cc:811] Training of tree  91/300 (tree index:90) done accuracy:0.925557 logloss:0.427406
+I0000 00:00:1739479542.865618    4079 random_forest.cc:811] Training of tree  101/300 (tree index:99) done accuracy:0.925557 logloss:0.401855
+I0000 00:00:1739479542.941308    4079 random_forest.cc:811] Training of tree  111/300 (tree index:110) done accuracy:0.925819 logloss:0.385888
+I0000 00:00:1739479543.012168    4079 random_forest.cc:811] Training of tree  121/300 (tree index:120) done accuracy:0.924771 logloss:0.350291
+I0000 00:00:1739479543.094438    4079 random_forest.cc:811] Training of tree  131/300 (tree index:130) done accuracy:0.924246 logloss:0.350708
+I0000 00:00:1739479543.157889    4079 random_forest.cc:811] Training of tree  141/300 (tree index:140) done accuracy:0.924509 logloss:0.351211
+I0000 00:00:1739479543.231716    4078 random_forest.cc:811] Training of tree  151/300 (tree index:150) done accuracy:0.925295 logloss:0.340767
+I0000 00:00:1739479543.300974    4079 random_forest.cc:811] Training of tree  161/300 (tree index:160) done accuracy:0.925557 logloss:0.341097
+I0000 00:00:1739479543.369348    4078 random_forest.cc:811] Training of tree  171/300 (tree index:171) done accuracy:0.926868 logloss:0.32357
+I0000 00:00:1739479543.442533    4079 random_forest.cc:811] Training of tree  181/300 (tree index:180) done accuracy:0.92713 logloss:0.322521
+I0000 00:00:1739479543.516527    4078 random_forest.cc:811] Training of tree  191/300 (tree index:190) done accuracy:0.927654 logloss:0.305735
+I0000 00:00:1739479543.588890    4079 random_forest.cc:811] Training of tree  201/300 (tree index:200) done accuracy:0.92713 logloss:0.306614
+I0000 00:00:1739479543.664164    4079 random_forest.cc:811] Training of tree  211/300 (tree index:209) done accuracy:0.92713 logloss:0.306517
+I0000 00:00:1739479543.734013    4078 random_forest.cc:811] Training of tree  221/300 (tree index:220) done accuracy:0.927392 logloss:0.288571
+I0000 00:00:1739479543.808504    4078 random_forest.cc:811] Training of tree  231/300 (tree index:230) done accuracy:0.927392 logloss:0.289658
+I0000 00:00:1739479543.877290    4078 random_forest.cc:811] Training of tree  241/300 (tree index:240) done accuracy:0.927392 logloss:0.291081
+I0000 00:00:1739479543.946686    4078 random_forest.cc:811] Training of tree  251/300 (tree index:250) done accuracy:0.927654 logloss:0.291628
+I0000 00:00:1739479544.020264    4078 random_forest.cc:811] Training of tree  261/300 (tree index:260) done accuracy:0.927916 logloss:0.291823
+I0000 00:00:1739479544.101413    4079 random_forest.cc:811] Training of tree  271/300 (tree index:270) done accuracy:0.927916 logloss:0.292428
+I0000 00:00:1739479544.173528    4078 random_forest.cc:811] Training of tree  281/300 (tree index:281) done accuracy:0.92844 logloss:0.292554
+I0000 00:00:1739479544.243196    4078 random_forest.cc:811] Training of tree  291/300 (tree index:290) done accuracy:0.927916 logloss:0.291975
+I0000 00:00:1739479544.297699    4079 random_forest.cc:811] Training of tree  300/300 (tree index:299) done accuracy:0.927654 logloss:0.293217
+I0000 00:00:1739479544.297791    4075 random_forest.cc:891] Final OOB metrics: accuracy:0.927654 logloss:0.293217
+I0000 00:00:1739479544.315285    4075 kernel.cc:926] Export model in log directory: /tmp/tmpmpslxpjt with prefix 7528ea310aca4dd8
+I0000 00:00:1739479544.348493    4075 kernel.cc:944] Save model in resources
+I0000 00:00:1739479544.354527    2862 abstract_model.cc:914] Model self evaluation:
+Number of predictions (without weights): 3815
+Number of predictions (with weights): 3815
+Task: CLASSIFICATION
+Label: __LABEL
+
+Accuracy: 0.927654  CI95[W][0.920378 0.93444]
+LogLoss: : 0.293217
+ErrorRate: : 0.072346
+
+Default Accuracy: : 0.734731
+Default LogLoss: : 0.578496
+Default ErrorRate: : 0.265269
+
+Confusion Table:
+truth\prediction
+      1    2
+1  2779   24
+2   252  760
+Total: 3815
