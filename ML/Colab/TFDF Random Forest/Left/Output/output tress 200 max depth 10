@@ -1,4 +1,5 @@
 model = tfdf.keras.RandomForestModel(num_trees=200,  max_depth=10,   verbose=3)
+Training time: 5.649423837661743 seconds
 Prediction time: 0.27692461013793945 seconds
 Number of 1s in the 'NST_B_Label train' column: 3611
 Number of 0s in the 'NST_B_Label train' column: 3206
