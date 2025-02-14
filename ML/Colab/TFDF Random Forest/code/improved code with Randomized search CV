@@ -175,3 +175,19 @@ plt.title('Receiver Operating Characteristic (ROC)')
 plt.legend(loc="lower right")
 plt.show()
 
+
+
+
+
+
+not compatible 
+
+/usr/local/lib/python3.11/dist-packages/sklearn/base.py in _clone_parametrized(estimator, safe)
+    115                 )
+    116             else:
+--> 117                 raise TypeError(
+    118                     "Cannot clone object '%s' (type %s): "
+    119                     "it does not seem to be a scikit-learn "
+
+TypeError: Cannot clone object '<tensorflow_decision_forests.keras.RandomForestModel object at 0x7d7b83372550>' (type <class 'tensorflow_decision_forests.keras.RandomForestModel'>): it does not seem to be a scikit-learn estimator as it does not implement a 'get_params' method.
+
