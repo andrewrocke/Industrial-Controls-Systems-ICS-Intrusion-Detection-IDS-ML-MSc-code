@@ -1,0 +1,85 @@
+model = tfdf.keras.RandomForestModel(num_trees=400,  max_depth=10,   verbose=3)
+Training time: 8.051910400390625 seconds
+Prediction time: 0.2492811679840088 seconds
+Number of 1s in the 'NST_B_Label train' column: 3604
+Number of 0s in the 'NST_B_Label train' column: 3221
+Number of 1s in the 'NST_B_Label test' column: 904
+Number of 0s in the 'NST_B_Label test' column: 804
+Number of 1s in y_true: 904
+Number of 0s in y_true: 804
+Number of 1s in y_pred: 782
+Number of 0s in y_pred: 926
+Accuracy: 0.9052
+Precision: 0.9744
+Recall: 0.8429
+F1-score: 0.9039
+
+
+model = tfdf.keras.RandomForestModel(num_trees=200,  max_depth=20,   verbose=3)
+
+Training time: 7.093874216079712 seconds
+Prediction time: 0.22316646575927734 seconds
+
+Number of 1s in the 'NST_B_Label train' column: 3612
+Number of 0s in the 'NST_B_Label train' column: 3208
+Number of 1s in the 'NST_B_Label test' column: 896
+Number of 0s in the 'NST_B_Label test' column: 817
+Number of 1s in y_true: 896
+Number of 0s in y_true: 817
+Number of 1s in y_pred: 813
+Number of 0s in y_pred: 900
+Accuracy: 0.9364
+Precision: 0.9840
+Recall: 0.8929
+F1-score: 0.9362
+
+
+
+model = tfdf.keras.RandomForestModel(num_trees=200,  max_depth=50,   verbose=3)
+Training time: 8.491645812988281 seconds
+Prediction time: 0.23675918579101562 seconds
+Number of 1s in the 'NST_B_Label train' column: 3590
+Number of 0s in the 'NST_B_Label train' column: 3246
+Number of 1s in the 'NST_B_Label test' column: 918
+Number of 0s in the 'NST_B_Label test' column: 779
+Number of 1s in y_true: 918
+Number of 0s in y_true: 779
+Number of 1s in y_pred: 908
+Number of 0s in y_pred: 789
+Accuracy: 0.9446
+Precision: 0.9537
+Recall: 0.9434
+F1-score: 0.9485
+
+
+
+model = tfdf.keras.RandomForestModel(num_trees=200,  max_depth=70,   verbose=3)
+Prediction time: 0.24054932594299316 seconds
+Number of 1s in the 'NST_B_Label train' column: 3569
+Number of 0s in the 'NST_B_Label train' column: 3233
+Number of 1s in the 'NST_B_Label test' column: 939
+Number of 0s in the 'NST_B_Label test' column: 792
+Number of 1s in y_true: 939
+Number of 0s in y_true: 792
+Number of 1s in y_pred: 915
+Number of 0s in y_pred: 816
+Accuracy: 0.9503
+Precision: 0.9661
+Recall: 0.9414
+F1-score: 0.9536
+
+model = tfdf.keras.RandomForestModel(num_trees=100,  max_depth=50,   verbose=3)
+Training time: 7.762544393539429 seconds
+Prediction time: 0.2384648323059082 seconds
+Number of 1s in the 'NST_B_Label train' column: 3613
+Number of 0s in the 'NST_B_Label train' column: 3242
+Number of 1s in the 'NST_B_Label test' column: 895
+Number of 0s in the 'NST_B_Label test' column: 783
+Number of 1s in y_true: 895
+Number of 0s in y_true: 783
+Number of 1s in y_pred: 884
+Number of 0s in y_pred: 794
+Accuracy: 0.9493
+Precision: 0.9581
+Recall: 0.9464
+F1-score: 0.9522
