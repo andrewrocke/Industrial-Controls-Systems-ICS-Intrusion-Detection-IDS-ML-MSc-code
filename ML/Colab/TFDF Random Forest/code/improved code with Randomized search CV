@@ -13,6 +13,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, r
 import matplotlib.pyplot as plt # Import matplotlib
 import time
 from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import randint
 
 
 
