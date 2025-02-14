@@ -1,1 +1,626 @@
+total dataframe : (35404, 52)
+Training time: 28.277806282043457 seconds
+++++++++++++++++++++++++++++++++Summary+++++++++++++++++++++++
+Model: "random_forest_model_15"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+=================================================================
+Total params: 1 (1.00 Byte)
+Trainable params: 0 (0.00 Byte)
+Non-trainable params: 1 (1.00 Byte)
+_________________________________________________________________
+Type: "RANDOM_FOREST"
+Task: CLASSIFICATION
+Label: "__LABEL"
 
+Input Features (51):
+	duration
+	end
+	endOffset
+	rAckDelayAvg
+	rAckDelayMax
+	rAckDelayMin
+	rAckRate
+	rBytesAvg
+	rBytesMax
+	rBytesMin
+	rBytesSum
+	rFinRate
+	rFragmentRate
+	rInterPacketAvg
+	rLoad
+	rPackets
+	rPayloadAvg
+	rPayloadMax
+	rPayloadMin
+	rPayloadSum
+	rPshRate
+	rRstRate
+	rSynRate
+	rUrgRate
+	rWinTCP
+	rttl
+	sAckDelayAvg
+	sAckDelayMax
+	sAckDelayMin
+	sAckRate
+	sBytesAvg
+	sBytesMax
+	sBytesMin
+	sBytesSum
+	sFinRate
+	sFragmentRate
+	sInterPacketAvg
+	sLoad
+	sPackets
+	sPayloadAvg
+	sPayloadMax
+	sPayloadMin
+	sPayloadSum
+	sPshRate
+	sRstRate
+	sSynRate
+	sUrgRate
+	sWinTCP
+	start
+	startOffset
+	sttl
+
+No weights
+
+Variable Importance: INV_MEAN_MIN_DEPTH:
+    1.    "rAckDelayMin"  0.137407 ################
+    2.     "startOffset"  0.127539 #############
+    3.       "endOffset"  0.121889 ###########
+    4.             "end"  0.109316 ########
+    5.         "sWinTCP"  0.105799 #######
+    6.           "start"  0.102615 #######
+    7.     "rPayloadAvg"  0.101202 ######
+    8.     "rPayloadMax"  0.097917 #####
+    9.       "rBytesMax"  0.097014 #####
+   10.    "rAckDelayAvg"  0.094053 ####
+   11.         "rWinTCP"  0.093150 ####
+   12.        "rAckRate"  0.092956 ####
+   13. "rInterPacketAvg"  0.092807 ####
+   14.        "rSynRate"  0.090562 ###
+   15.           "sLoad"  0.090373 ###
+   16.        "sPshRate"  0.089170 ###
+   17.       "rBytesMin"  0.086385 ##
+   18.       "rBytesAvg"  0.085603 ##
+   19.        "duration"  0.085253 ##
+   20.       "sBytesSum"  0.083556 ##
+   21.           "rLoad"  0.083348 ##
+   22.        "rPshRate"  0.082980 #
+   23.    "sAckDelayMax"  0.082718 #
+   24. "sInterPacketAvg"  0.082664 #
+   25.    "sAckDelayAvg"  0.082111 #
+   26.     "sPayloadSum"  0.082036 #
+   27.     "sPayloadAvg"  0.081172 #
+   28.     "sPayloadMax"  0.080779 #
+   29.        "sSynRate"  0.080736 #
+   30.        "rPackets"  0.080257 #
+   31.        "sPackets"  0.080100 #
+   32.       "rBytesSum"  0.079478 #
+   33.       "sBytesMax"  0.078242 
+   34.    "rAckDelayMax"  0.078178 
+   35.        "sFinRate"  0.077425 
+   36.            "rttl"  0.076998 
+   37.     "rPayloadSum"  0.076563 
+   38.     "rPayloadMin"  0.076383 
+   39.       "sBytesAvg"  0.076303 
+   40.       "sBytesMin"  0.076296 
+   41.    "sAckDelayMin"  0.076264 
+   42.        "rFinRate"  0.076114 
+   43.     "sPayloadMin"  0.076061 
+   44.        "sRstRate"  0.075938 
+   45.        "rRstRate"  0.075590 
+   46.        "sAckRate"  0.075543 
+
+Variable Importance: NUM_AS_ROOT:
+    1.    "rAckRate" 54.000000 ################
+    2.    "rSynRate" 50.000000 ##############
+    3.     "sWinTCP" 42.000000 ############
+    4.     "rWinTCP" 40.000000 ###########
+    5.    "sPshRate" 24.000000 ######
+    6.    "sSynRate" 18.000000 #####
+    7.    "rPshRate" 17.000000 ####
+    8. "rPayloadAvg" 12.000000 ###
+    9.   "rBytesAvg"  9.000000 ##
+   10.   "rBytesMax"  9.000000 ##
+   11. "rPayloadMax"  7.000000 #
+   12.    "sFinRate"  6.000000 #
+   13. "sPayloadMax"  4.000000 
+   14. "sPayloadAvg"  3.000000 
+   15.       "sLoad"  2.000000 
+   16.   "rBytesMin"  1.000000 
+   17.        "rttl"  1.000000 
+   18.    "sRstRate"  1.000000 
+
+Variable Importance: NUM_NODES:
+    1.     "startOffset" 8636.000000 ################
+    2.       "endOffset" 8492.000000 ###############
+    3.        "duration" 2487.000000 ####
+    4.           "sLoad" 2476.000000 ####
+    5. "sInterPacketAvg" 2287.000000 ####
+    6.             "end" 2124.000000 ###
+    7.           "start" 1958.000000 ###
+    8.    "sAckDelayAvg" 1663.000000 ###
+    9. "rInterPacketAvg" 1651.000000 ###
+   10.    "rAckDelayAvg" 1625.000000 ##
+   11.           "rLoad" 1584.000000 ##
+   12.       "sBytesSum" 735.000000 #
+   13.       "rBytesSum" 600.000000 #
+   14.    "rAckDelayMax" 565.000000 #
+   15.    "rAckDelayMin" 548.000000 
+   16.        "sPackets" 544.000000 
+   17.     "rPayloadAvg" 515.000000 
+   18.        "rPackets" 486.000000 
+   19.     "sPayloadSum" 465.000000 
+   20.       "rBytesAvg" 389.000000 
+   21.        "rPshRate" 382.000000 
+   22.    "sAckDelayMax" 343.000000 
+   23.     "sPayloadAvg" 313.000000 
+   24.     "sPayloadMax" 252.000000 
+   25.     "rPayloadSum" 234.000000 
+   26.       "sBytesMax" 219.000000 
+   27.         "sWinTCP" 206.000000 
+   28.       "sBytesAvg" 205.000000 
+   29.       "sBytesMin" 184.000000 
+   30.    "sAckDelayMin" 164.000000 
+   31.     "sPayloadMin" 162.000000 
+   32.        "sPshRate" 157.000000 
+   33.     "rPayloadMax" 154.000000 
+   34.         "rWinTCP" 148.000000 
+   35.       "rBytesMax" 142.000000 
+   36.       "rBytesMin" 110.000000 
+   37.        "rAckRate" 103.000000 
+   38.        "rSynRate" 85.000000 
+   39.        "sSynRate" 52.000000 
+   40.        "rFinRate" 41.000000 
+   41.     "rPayloadMin" 40.000000 
+   42.            "rttl" 38.000000 
+   43.        "sFinRate" 33.000000 
+   44.        "rRstRate" 31.000000 
+   45.        "sAckRate" 20.000000 
+   46.        "sRstRate" 20.000000 
+
+Variable Importance: SUM_SCORE:
+    1.     "startOffset" 400979.204866 ################
+    2.       "endOffset" 388672.719970 ###############
+    3.             "end" 97714.674906 ###
+    4.           "start" 92426.834185 ###
+    5.        "rAckRate" 81485.137797 ###
+    6.    "rAckDelayMin" 76348.077653 ###
+    7.        "rSynRate" 73592.256348 ##
+    8.         "sWinTCP" 70195.016566 ##
+    9.         "rWinTCP" 60745.498997 ##
+   10.     "rPayloadAvg" 41784.103123 #
+   11.        "sPshRate" 37039.752985 #
+   12.     "rPayloadMax" 36524.519383 #
+   13.           "sLoad" 34864.803573 #
+   14.       "rBytesMax" 33637.981848 #
+   15.        "duration" 28690.043411 #
+   16.        "rPshRate" 24050.449801 
+   17.    "rAckDelayAvg" 22681.523923 
+   18.        "sSynRate" 21420.304784 
+   19. "rInterPacketAvg" 20277.394878 
+   20.       "rBytesAvg" 19919.432693 
+   21. "sInterPacketAvg" 14631.785509 
+   22.        "sPackets" 14330.016164 
+   23.       "sBytesSum" 13314.906339 
+   24.           "rLoad" 12441.804698 
+   25.    "sAckDelayAvg" 11837.449516 
+   26.       "rBytesMin" 11315.312253 
+   27.    "rAckDelayMax" 9158.593731 
+   28.     "sPayloadAvg" 7668.937271 
+   29.     "sPayloadMax" 7523.852924 
+   30.     "sPayloadSum" 6065.210161 
+   31.        "rPackets" 5227.893383 
+   32.       "rBytesSum" 5194.884090 
+   33.    "sAckDelayMax" 5068.476885 
+   34.        "sFinRate" 4725.436155 
+   35.       "sBytesMax" 4590.429110 
+   36.       "sBytesMin" 3436.510975 
+   37.            "rttl" 2966.081401 
+   38.     "sPayloadMin" 2767.137659 
+   39.       "sBytesAvg" 2727.027475 
+   40.    "sAckDelayMin" 1743.702496 
+   41.     "rPayloadSum" 1452.724112 
+   42.        "rFinRate" 794.785093 
+   43.        "sRstRate" 790.548751 
+   44.     "rPayloadMin" 744.215099 
+   45.        "rRstRate" 316.377915 
+   46.        "sAckRate" 221.271899 
+
+
+
+Winner takes all: true
+Out-of-bag evaluation: accuracy:0.907915 logloss:0.834372
+Number of trees: 300
+Total number of nodes: 87636
+
+Number of nodes by tree:
+Count: 300 Average: 292.12 StdDev: 72.9608
+Min: 121 Max: 509 Ignored: 0
+----------------------------------------------
+[ 121, 140)  2   0.67%   0.67% #
+[ 140, 159)  6   2.00%   2.67% ##
+[ 159, 179)  6   2.00%   4.67% ##
+[ 179, 198) 13   4.33%   9.00% ####
+[ 198, 218) 17   5.67%  14.67% #####
+[ 218, 237) 27   9.00%  23.67% #######
+[ 237, 257) 22   7.33%  31.00% ######
+[ 257, 276) 34  11.33%  42.33% #########
+[ 276, 296) 34  11.33%  53.67% #########
+[ 296, 315) 37  12.33%  66.00% ##########
+[ 315, 334) 22   7.33%  73.33% ######
+[ 334, 354) 19   6.33%  79.67% #####
+[ 354, 373) 20   6.67%  86.33% #####
+[ 373, 393) 19   6.33%  92.67% #####
+[ 393, 412) 10   3.33%  96.00% ###
+[ 412, 432)  1   0.33%  96.33%
+[ 432, 451)  0   0.00%  96.33%
+[ 451, 471)  5   1.67%  98.00% #
+[ 471, 490)  1   0.33%  98.33%
+[ 490, 509]  5   1.67% 100.00% #
+
+Depth by leafs:
+Count: 43968 Average: 12.2554 StdDev: 3.05477
+Min: 1 Max: 15 Ignored: 0
+----------------------------------------------
+[  1,  2)   238   0.54%   0.54%
+[  2,  3)   171   0.39%   0.93%
+[  3,  4)   296   0.67%   1.60%
+[  4,  5)   636   1.45%   3.05%
+[  5,  6)   793   1.80%   4.85% #
+[  6,  7)   850   1.93%   6.79% #
+[  7,  8)   897   2.04%   8.83% #
+[  8,  9)  1308   2.97%  11.80% #
+[  9, 10)  2078   4.73%  16.53% #
+[ 10, 11)  2926   6.65%  23.18% ##
+[ 11, 12)  3764   8.56%  31.74% ###
+[ 12, 13)  4565  10.38%  42.13% ###
+[ 13, 14)  5320  12.10%  54.23% ####
+[ 14, 15)  6170  14.03%  68.26% ####
+[ 15, 15] 13956  31.74% 100.00% ##########
+
+Number of training obs by leaf:
+Count: 43968 Average: 192.501 StdDev: 893.325
+Min: 5 Max: 18579 Ignored: 0
+----------------------------------------------
+[     5,   933) 42321  96.25%  96.25% ##########
+[   933,  1862)   971   2.21%  98.46%
+[  1862,  2791)   199   0.45%  98.92%
+[  2791,  3720)    89   0.20%  99.12%
+[  3720,  4648)    52   0.12%  99.24%
+[  4648,  5577)    46   0.10%  99.34%
+[  5577,  6506)    45   0.10%  99.44%
+[  6506,  7435)    32   0.07%  99.52%
+[  7435,  8363)    28   0.06%  99.58%
+[  8363,  9292)    44   0.10%  99.68%
+[  9292, 10221)    30   0.07%  99.75%
+[ 10221, 11150)    17   0.04%  99.79%
+[ 11150, 12078)    28   0.06%  99.85%
+[ 12078, 13007)    18   0.04%  99.89%
+[ 13007, 13936)    23   0.05%  99.94%
+[ 13936, 14865)     9   0.02%  99.96%
+[ 14865, 15793)    13   0.03%  99.99%
+[ 15793, 16722)     2   0.00% 100.00%
+[ 16722, 17651)     0   0.00% 100.00%
+[ 17651, 18579]     1   0.00% 100.00%
+
+Attribute in nodes:
+	8636 : startOffset [NUMERICAL]
+	8492 : endOffset [NUMERICAL]
+	2487 : duration [NUMERICAL]
+	2476 : sLoad [NUMERICAL]
+	2287 : sInterPacketAvg [NUMERICAL]
+	2124 : end [NUMERICAL]
+	1958 : start [NUMERICAL]
+	1663 : sAckDelayAvg [NUMERICAL]
+	1651 : rInterPacketAvg [NUMERICAL]
+	1625 : rAckDelayAvg [NUMERICAL]
+	1584 : rLoad [NUMERICAL]
+	735 : sBytesSum [NUMERICAL]
+	600 : rBytesSum [NUMERICAL]
+	565 : rAckDelayMax [NUMERICAL]
+	548 : rAckDelayMin [NUMERICAL]
+	544 : sPackets [NUMERICAL]
+	515 : rPayloadAvg [NUMERICAL]
+	486 : rPackets [NUMERICAL]
+	465 : sPayloadSum [NUMERICAL]
+	389 : rBytesAvg [NUMERICAL]
+	382 : rPshRate [NUMERICAL]
+	343 : sAckDelayMax [NUMERICAL]
+	313 : sPayloadAvg [NUMERICAL]
+	252 : sPayloadMax [NUMERICAL]
+	234 : rPayloadSum [NUMERICAL]
+	219 : sBytesMax [NUMERICAL]
+	206 : sWinTCP [NUMERICAL]
+	205 : sBytesAvg [NUMERICAL]
+	184 : sBytesMin [NUMERICAL]
+	164 : sAckDelayMin [NUMERICAL]
+	162 : sPayloadMin [NUMERICAL]
+	157 : sPshRate [NUMERICAL]
+	154 : rPayloadMax [NUMERICAL]
+	148 : rWinTCP [NUMERICAL]
+	142 : rBytesMax [NUMERICAL]
+	110 : rBytesMin [NUMERICAL]
+	103 : rAckRate [NUMERICAL]
+	85 : rSynRate [NUMERICAL]
+	52 : sSynRate [NUMERICAL]
+	41 : rFinRate [NUMERICAL]
+	40 : rPayloadMin [NUMERICAL]
+	38 : rttl [NUMERICAL]
+	33 : sFinRate [NUMERICAL]
+	31 : rRstRate [NUMERICAL]
+	20 : sRstRate [NUMERICAL]
+	20 : sAckRate [NUMERICAL]
+
+Attribute in nodes with depth <= 0:
+	54 : rAckRate [NUMERICAL]
+	50 : rSynRate [NUMERICAL]
+	42 : sWinTCP [NUMERICAL]
+	40 : rWinTCP [NUMERICAL]
+	24 : sPshRate [NUMERICAL]
+	18 : sSynRate [NUMERICAL]
+	17 : rPshRate [NUMERICAL]
+	12 : rPayloadAvg [NUMERICAL]
+	9 : rBytesMax [NUMERICAL]
+	9 : rBytesAvg [NUMERICAL]
+	7 : rPayloadMax [NUMERICAL]
+	6 : sFinRate [NUMERICAL]
+	4 : sPayloadMax [NUMERICAL]
+	3 : sPayloadAvg [NUMERICAL]
+	2 : sLoad [NUMERICAL]
+	1 : sRstRate [NUMERICAL]
+	1 : rttl [NUMERICAL]
+	1 : rBytesMin [NUMERICAL]
+
+Attribute in nodes with depth <= 1:
+	63 : sWinTCP [NUMERICAL]
+	60 : rAckRate [NUMERICAL]
+	54 : rPayloadAvg [NUMERICAL]
+	53 : rSynRate [NUMERICAL]
+	51 : rPayloadMax [NUMERICAL]
+	51 : rBytesMax [NUMERICAL]
+	44 : rWinTCP [NUMERICAL]
+	35 : sPshRate [NUMERICAL]
+	33 : rAckDelayMin [NUMERICAL]
+	24 : rPshRate [NUMERICAL]
+	22 : sSynRate [NUMERICAL]
+	21 : sLoad [NUMERICAL]
+	21 : rBytesAvg [NUMERICAL]
+	16 : rBytesMin [NUMERICAL]
+	13 : sBytesSum [NUMERICAL]
+	12 : rAckDelayAvg [NUMERICAL]
+	11 : sPackets [NUMERICAL]
+	7 : rLoad [NUMERICAL]
+	7 : rInterPacketAvg [NUMERICAL]
+	6 : sPayloadAvg [NUMERICAL]
+	6 : sFinRate [NUMERICAL]
+	6 : duration [NUMERICAL]
+	5 : sPayloadMin [NUMERICAL]
+	5 : sPayloadMax [NUMERICAL]
+	5 : rttl [NUMERICAL]
+	4 : rPayloadMin [NUMERICAL]
+	4 : rPackets [NUMERICAL]
+	3 : sBytesMin [NUMERICAL]
+	3 : sBytesMax [NUMERICAL]
+	3 : rRstRate [NUMERICAL]
+	3 : endOffset [NUMERICAL]
+	3 : end [NUMERICAL]
+	2 : startOffset [NUMERICAL]
+	2 : sBytesAvg [NUMERICAL]
+	1 : start [NUMERICAL]
+	1 : sRstRate [NUMERICAL]
+	1 : sPayloadSum [NUMERICAL]
+	1 : sInterPacketAvg [NUMERICAL]
+
+Attribute in nodes with depth <= 2:
+	94 : rAckDelayMin [NUMERICAL]
+	85 : rPayloadAvg [NUMERICAL]
+	78 : sWinTCP [NUMERICAL]
+	69 : rBytesMax [NUMERICAL]
+	68 : rPayloadMax [NUMERICAL]
+	65 : rAckRate [NUMERICAL]
+	60 : rInterPacketAvg [NUMERICAL]
+	59 : rWinTCP [NUMERICAL]
+	54 : rSynRate [NUMERICAL]
+	45 : rLoad [NUMERICAL]
+	44 : sLoad [NUMERICAL]
+	43 : sPshRate [NUMERICAL]
+	40 : rAckDelayAvg [NUMERICAL]
+	36 : rBytesMin [NUMERICAL]
+	36 : rBytesAvg [NUMERICAL]
+	33 : duration [NUMERICAL]
+	28 : rPackets [NUMERICAL]
+	25 : rPshRate [NUMERICAL]
+	24 : sSynRate [NUMERICAL]
+	20 : end [NUMERICAL]
+	19 : startOffset [NUMERICAL]
+	19 : start [NUMERICAL]
+	19 : rBytesSum [NUMERICAL]
+	19 : endOffset [NUMERICAL]
+	16 : sPackets [NUMERICAL]
+	15 : sBytesSum [NUMERICAL]
+	12 : sBytesMin [NUMERICAL]
+	9 : sInterPacketAvg [NUMERICAL]
+	9 : rttl [NUMERICAL]
+	8 : sPayloadMax [NUMERICAL]
+	8 : sPayloadAvg [NUMERICAL]
+	7 : sPayloadMin [NUMERICAL]
+	7 : rFinRate [NUMERICAL]
+	7 : rAckDelayMax [NUMERICAL]
+	6 : sFinRate [NUMERICAL]
+	6 : rPayloadMin [NUMERICAL]
+	5 : sPayloadSum [NUMERICAL]
+	5 : sBytesMax [NUMERICAL]
+	4 : rRstRate [NUMERICAL]
+	4 : rPayloadSum [NUMERICAL]
+	2 : sBytesAvg [NUMERICAL]
+	1 : sRstRate [NUMERICAL]
+	1 : sAckDelayMax [NUMERICAL]
+	1 : sAckDelayAvg [NUMERICAL]
+
+Attribute in nodes with depth <= 3:
+	159 : rAckDelayMin [NUMERICAL]
+	107 : rInterPacketAvg [NUMERICAL]
+	105 : rPayloadAvg [NUMERICAL]
+	104 : sWinTCP [NUMERICAL]
+	92 : rLoad [NUMERICAL]
+	86 : startOffset [NUMERICAL]
+	86 : rPayloadMax [NUMERICAL]
+	85 : rBytesMax [NUMERICAL]
+	80 : sLoad [NUMERICAL]
+	80 : duration [NUMERICAL]
+	78 : rAckRate [NUMERICAL]
+	76 : endOffset [NUMERICAL]
+	73 : rWinTCP [NUMERICAL]
+	61 : rSynRate [NUMERICAL]
+	59 : end [NUMERICAL]
+	58 : start [NUMERICAL]
+	56 : rAckDelayAvg [NUMERICAL]
+	55 : rBytesMin [NUMERICAL]
+	54 : sPshRate [NUMERICAL]
+	51 : rPackets [NUMERICAL]
+	46 : rBytesSum [NUMERICAL]
+	46 : rBytesAvg [NUMERICAL]
+	33 : sPackets [NUMERICAL]
+	33 : rAckDelayMax [NUMERICAL]
+	27 : sSynRate [NUMERICAL]
+	26 : rPshRate [NUMERICAL]
+	25 : sBytesSum [NUMERICAL]
+	21 : sInterPacketAvg [NUMERICAL]
+	16 : sBytesMin [NUMERICAL]
+	15 : sPayloadAvg [NUMERICAL]
+	14 : sPayloadMax [NUMERICAL]
+	14 : rttl [NUMERICAL]
+	12 : rFinRate [NUMERICAL]
+	11 : sPayloadSum [NUMERICAL]
+	11 : sAckDelayMax [NUMERICAL]
+	11 : sAckDelayAvg [NUMERICAL]
+	10 : sPayloadMin [NUMERICAL]
+	8 : sFinRate [NUMERICAL]
+	8 : rPayloadMin [NUMERICAL]
+	7 : sBytesMax [NUMERICAL]
+	7 : sAckDelayMin [NUMERICAL]
+	6 : sBytesAvg [NUMERICAL]
+	6 : rRstRate [NUMERICAL]
+	5 : rPayloadSum [NUMERICAL]
+	2 : sRstRate [NUMERICAL]
+
+Attribute in nodes with depth <= 5:
+	346 : endOffset [NUMERICAL]
+	345 : startOffset [NUMERICAL]
+	262 : rAckDelayMin [NUMERICAL]
+	231 : end [NUMERICAL]
+	214 : duration [NUMERICAL]
+	204 : rLoad [NUMERICAL]
+	197 : sLoad [NUMERICAL]
+	190 : start [NUMERICAL]
+	180 : rInterPacketAvg [NUMERICAL]
+	135 : rPayloadAvg [NUMERICAL]
+	129 : sWinTCP [NUMERICAL]
+	115 : rAckDelayAvg [NUMERICAL]
+	112 : rPayloadMax [NUMERICAL]
+	103 : rBytesMax [NUMERICAL]
+	98 : rWinTCP [NUMERICAL]
+	88 : rPackets [NUMERICAL]
+	83 : rBytesSum [NUMERICAL]
+	82 : rAckRate [NUMERICAL]
+	80 : rAckDelayMax [NUMERICAL]
+	79 : rBytesMin [NUMERICAL]
+	77 : sInterPacketAvg [NUMERICAL]
+	73 : sBytesSum [NUMERICAL]
+	71 : sPshRate [NUMERICAL]
+	68 : rSynRate [NUMERICAL]
+	68 : rBytesAvg [NUMERICAL]
+	65 : sPackets [NUMERICAL]
+	52 : sAckDelayAvg [NUMERICAL]
+	44 : sAckDelayMax [NUMERICAL]
+	43 : sPayloadSum [NUMERICAL]
+	39 : sPayloadAvg [NUMERICAL]
+	36 : rPshRate [NUMERICAL]
+	35 : sPayloadMax [NUMERICAL]
+	29 : sBytesMax [NUMERICAL]
+	28 : sSynRate [NUMERICAL]
+	27 : sBytesMin [NUMERICAL]
+	22 : sAckDelayMin [NUMERICAL]
+	21 : sPayloadMin [NUMERICAL]
+	21 : rttl [NUMERICAL]
+	20 : rFinRate [NUMERICAL]
+	15 : sFinRate [NUMERICAL]
+	15 : sBytesAvg [NUMERICAL]
+	14 : rPayloadSum [NUMERICAL]
+	12 : rPayloadMin [NUMERICAL]
+	9 : rRstRate [NUMERICAL]
+	5 : sRstRate [NUMERICAL]
+	2 : sAckRate [NUMERICAL]
+
+Condition type in nodes:
+	43668 : HigherCondition
+Condition type in nodes with depth <= 0:
+	300 : HigherCondition
+Condition type in nodes with depth <= 1:
+	662 : HigherCondition
+Condition type in nodes with depth <= 2:
+	1215 : HigherCondition
+Condition type in nodes with depth <= 3:
+	2025 : HigherCondition
+Condition type in nodes with depth <= 5:
+	4184 : HigherCondition
+Node format: NOT_SET
+
+Training OOB:
+	trees: 1, Out-of-bag evaluation: accuracy:0.883556 logloss:4.19705
+	trees: 11, Out-of-bag evaluation: accuracy:0.892853 logloss:2.73325
+	trees: 21, Out-of-bag evaluation: accuracy:0.90061 logloss:1.98019
+	trees: 31, Out-of-bag evaluation: accuracy:0.90437 logloss:1.6427
+	trees: 41, Out-of-bag evaluation: accuracy:0.905186 logloss:1.58161
+	trees: 51, Out-of-bag evaluation: accuracy:0.905717 logloss:1.51154
+	trees: 61, Out-of-bag evaluation: accuracy:0.906993 logloss:1.46838
+	trees: 71, Out-of-bag evaluation: accuracy:0.907986 logloss:1.45437
+	trees: 81, Out-of-bag evaluation: accuracy:0.907986 logloss:1.42078
+	trees: 91, Out-of-bag evaluation: accuracy:0.908198 logloss:1.38675
+	trees: 101, Out-of-bag evaluation: accuracy:0.907773 logloss:1.35537
+	trees: 111, Out-of-bag evaluation: accuracy:0.906851 logloss:1.26144
+	trees: 121, Out-of-bag evaluation: accuracy:0.90717 logloss:1.25241
+	trees: 131, Out-of-bag evaluation: accuracy:0.907419 logloss:1.23839
+	trees: 141, Out-of-bag evaluation: accuracy:0.90756 logloss:1.21403
+	trees: 151, Out-of-bag evaluation: accuracy:0.90717 logloss:1.15986
+	trees: 161, Out-of-bag evaluation: accuracy:0.907135 logloss:1.13322
+	trees: 171, Out-of-bag evaluation: accuracy:0.907419 logloss:1.12558
+	trees: 181, Out-of-bag evaluation: accuracy:0.907312 logloss:1.1187
+	trees: 191, Out-of-bag evaluation: accuracy:0.90756 logloss:1.0928
+	trees: 201, Out-of-bag evaluation: accuracy:0.907879 logloss:1.06875
+	trees: 211, Out-of-bag evaluation: accuracy:0.908021 logloss:1.03925
+	trees: 221, Out-of-bag evaluation: accuracy:0.908198 logloss:1.01184
+	trees: 231, Out-of-bag evaluation: accuracy:0.90834 logloss:0.999162
+	trees: 241, Out-of-bag evaluation: accuracy:0.908553 logloss:0.98865
+	trees: 251, Out-of-bag evaluation: accuracy:0.908411 logloss:0.976389
+	trees: 261, Out-of-bag evaluation: accuracy:0.908305 logloss:0.974431
+	trees: 271, Out-of-bag evaluation: accuracy:0.907879 logloss:0.913352
+	trees: 281, Out-of-bag evaluation: accuracy:0.908376 logloss:0.901913
+	trees: 291, Out-of-bag evaluation: accuracy:0.908234 logloss:0.86078
+	trees: 300, Out-of-bag evaluation: accuracy:0.907915 logloss:0.834372
+
+None
+8/8 [==============================] - 1s 66ms/step - loss: 0.0000e+00 - accuracy: 0.9053
+++++++++++++++++++++++++++++++++Evaluation+++++++++++++++++++++++
+{'loss': 0.0, 'accuracy': 0.9052982926368713}
+8/8 [==============================] - 1s 58ms/step
+Prediction time: 0.6134688854217529 seconds
+Number of 1s in the 'NST_B_Label train' column: 4978
+Number of 0s in the 'NST_B_Label train' column: 23235
+Number of 1s in the 'NST_B_Label test' column: 1267
+Number of 0s in the 'NST_B_Label test' column: 5924
+Number of 1s in y_true: 1267
+Number of 0s in y_true: 5924
+Number of 1s in y_pred: 614
+Number of 0s in y_pred: 6577
+Accuracy: 0.9053
+Precision: 0.9772
+Recall: 0.4736
+F1-score: 0.6380
