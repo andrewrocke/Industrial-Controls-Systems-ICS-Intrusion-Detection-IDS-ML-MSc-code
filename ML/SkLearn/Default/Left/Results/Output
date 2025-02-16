@@ -36,4 +36,8 @@ Recall: 0.9218573046432617
 ROC
 AUC - ROC Score: 0.98
 F1 Score: 0.92
+
+
+Training time: 0.27382969856262207 seconds
+Prediction time: 0.08866667747497559 seconds
 CM
