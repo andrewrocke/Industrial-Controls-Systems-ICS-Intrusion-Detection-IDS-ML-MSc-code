@@ -62,3 +62,7 @@ ROC
 AUC - ROC Score: 0.98
 F1 Score: 0.81
 CM
+
+Training time: 2.51051926612854 seconds
+Prediction time: 0.026488065719604492 seconds
+
