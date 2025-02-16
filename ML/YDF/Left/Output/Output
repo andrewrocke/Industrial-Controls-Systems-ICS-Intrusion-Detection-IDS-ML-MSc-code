@@ -868,3 +868,18 @@ Details: 1000920 predictions in 0.000 seconds using 8 threads
 
 * Measured with the C++ serving API. See model.to_cpp().
 PS C:\Users\andre\OneDrive\Documents\Dissertation\research\ICS Incident Response\ML\code\ML Test> 
+
+
+
+Model trained in 0:00:01.594983
+Train time: 1.6066014766693115 seconds
+
+A model analysis. Use a notebook cell to display the analysis. Alternatively, export the analysis with `analysis.to_file("analysis.html")`.
+Single-thread inference time per example: 15.977 us (microseconds)
+Details: 182520 predictions in 0.000 seconds
+
+Multi-thread inference time per example: 2.750 us (microseconds)
+Details: 988650 predictions in 0.000 seconds using 8 threads
+
+* Measured with the C++ serving API. See model.to_cpp().
+Prediction time: 0.02254796028137207 seconds
