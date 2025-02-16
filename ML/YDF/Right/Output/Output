@@ -1018,3 +1018,22 @@ Details: 771714 predictions in 0.000 seconds using 8 threads
 * Measured with the C++ serving API. See model.to_cpp().
 PS C:\Users\andre\OneDrive\Documents\Dissertation\research\ICS Incident Response\ML\code\ML Test> & C:/Users/andre/AppData/Local/Microsoft/WindowsApps/python3.12.exe
  "c:/Users/andre/OneDrive/Documents/Dissertation/research/ICS Incident Response/ML/code/ML Test/ML Test/test_train_RF.py"
+
+
+
+
+
+
+
+Model trained in 0:00:01.094177
+Train time: 1.1235077381134033 seconds
+
+A model analysis. Use a notebook cell to display the analysis. Alternatively, export the analysis with `analysis.to_file("analysis.html")`.
+Single-thread inference time per example: 14.040 us (microseconds)
+Details: 211920 predictions in 0.000 seconds
+
+Multi-thread inference time per example: 2.620 us (microseconds)
+Details: 948342 predictions in 0.000 seconds using 8 threads
+
+* Measured with the C++ serving API. See model.to_cpp().
+Prediction time: 0.006193876266479492 seconds
