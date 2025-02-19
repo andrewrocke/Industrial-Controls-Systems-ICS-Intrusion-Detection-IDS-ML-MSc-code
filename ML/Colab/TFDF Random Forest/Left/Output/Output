@@ -273,3 +273,9 @@ truth\prediction
 1  3216    40
 2   471  3119
 Total: 6846
+
+Accuracy: 0.9309
+Precision: 0.9927
+Recall: 0.8762
+F1-score: 0.9308
+AUC: 0.9845
