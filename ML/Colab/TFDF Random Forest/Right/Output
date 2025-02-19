@@ -588,3 +588,25 @@ Number of 0s in y_pred: 749
 Precision: 0.9712
 Recall: 0.7891
 F1-score: 0.8707
+
+None
+1/1 [==============================] - 0s 251ms/step - loss: 0.0000e+00 - accuracy: 0.9294
+++++++++++++++++++++++++++++++++Evaluation+++++++++++++++++++++++
+{'loss': 0.0, 'accuracy': 0.9293756484985352}
+1/1 [==============================] - 0s 130ms/step
+Prediction time: 0.13797807693481445 seconds
+Number of 1s in the 'NST_B_Label train' column: 994
+Number of 0s in the 'NST_B_Label train' column: 2749
+Number of 1s in the 'NST_B_Label test' column: 262
+Number of 0s in the 'NST_B_Label test' column: 715
+Number of 1s in y_true: 262
+Number of 0s in y_true: 715
+Number of 1s in y_pred: 205
+Number of 0s in y_pred: 772
+Accuracy: 0.9294
+Precision: 0.9707
+Recall: 0.7595
+F1-score: 0.8522
+AUC: 0.9724
+SearchCV
+
