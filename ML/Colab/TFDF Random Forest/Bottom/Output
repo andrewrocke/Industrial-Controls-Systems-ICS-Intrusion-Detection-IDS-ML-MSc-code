@@ -624,3 +624,24 @@ Accuracy: 0.9053
 Precision: 0.9772
 Recall: 0.4736
 F1-score: 0.6380
+
+++++++++++++++++++++++++++++++++Evaluation+++++++++++++++++++++++
+{'loss': 0.0, 'accuracy': 0.906502366065979}
+8/8 [==============================] - 0s 31ms/step
+Prediction time: 0.35143017768859863 seconds
+Number of 1s in the 'NST_B_Label train' column: 5017
+Number of 0s in the 'NST_B_Label train' column: 23328
+Number of 1s in the 'NST_B_Label test' column: 1228
+Number of 0s in the 'NST_B_Label test' column: 5831
+Number of 1s in y_true: 1228
+Number of 0s in y_true: 5831
+Number of 1s in y_pred: 582
+Number of 0s in y_pred: 6477
+Accuracy: 0.9065
+Precision: 0.9880
+Recall: 0.4682
+F1-score: 0.6354
+AUC: 0.9608
+SearchCV
+
+
