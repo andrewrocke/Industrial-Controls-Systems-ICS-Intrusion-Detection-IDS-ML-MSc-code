@@ -1,0 +1,16 @@
+model = tfdf.keras.RandomForestModel(num_trees=100,  max_depth=50, verbose=3)
+
+Prediction time: 0.19350481033325195 seconds
+Number of 1s in the 'NST_B_Label train' column: 3614
+Number of 0s in the 'NST_B_Label train' column: 3200
+Number of 1s in the 'NST_B_Label test' column: 894
+Number of 0s in the 'NST_B_Label test' column: 825
+Number of 1s in y_true: 894
+Number of 0s in y_true: 825
+Number of 1s in y_pred: 872
+Number of 0s in y_pred: 847
+Accuracy: 0.9511
+Precision: 0.9644
+Recall: 0.9407
+F1-score: 0.9524
+AUC: 0.9908
