@@ -1,1 +1,78 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import pandas as pd
+import numpy as np
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras import layers
+import tensorflow as tf
+from scikeras.wrappers import KerasClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import StratifiedKFold
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 
+import time
+maxlen = 51
+start = time.time()
+# your code...
+
+# load dataset
+dataframe = pd.read_csv("output_left_LSTM.csv", header=None)
+#dataframe = pd.read_csv("sonar.csv", header=None)
+dataset = dataframe.values
+# split into input (X) and output (Y) variables
+X = dataset[:,0:51].astype(float)
+Y = dataset[:,51]
+
+# Option 2: Impute NaN with the mean of the column
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy='mean') # You can use other strategies like 'median'
+X = imputer.fit_transform(X)
+
+# Reshape the input data to include the timesteps dimension
+# Assuming each sample has a single timestep:
+X = X.reshape(X.shape[0], 1, X.shape[1]) # Reshape to (samples, timesteps, features)
+
+
+model = tf.keras.Sequential([
+    layers.Input(shape=(1, maxlen,), batch_size=51),
+    #layers.Embedding(256, 32),
+    layers.LSTM(16),
+    layers.Dense(1, activation='sigmoid')])
+
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+model.summary()
+
+#
+# Train Model
+#
+
+model.fit(np.asarray(X).astype(np.float32),
+          np.asarray(Y).astype(np.float32),
+          epochs=100, batch_size=51)
+
+#print("Baseline: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
+
+
+#
+# Save Model
+#
+
+export_archive = tf.keras.export.ExportArchive()
+export_archive.track(model)
+export_archive.add_endpoint(
+    name='serve',
+    fn=model.call,
+    input_signature=[tf.TensorSpec(shape=(1, 1, 51), dtype=tf.float32)],
+)
+export_archive.write_out('model')
+
+converter = tf.lite.TFLiteConverter.from_saved_model('model')
+
+lclassifier4_model = converter.convert()
+
+with open('lclassifier4.model', 'wb') as f:
+    f.write(lclassifier4_model)
