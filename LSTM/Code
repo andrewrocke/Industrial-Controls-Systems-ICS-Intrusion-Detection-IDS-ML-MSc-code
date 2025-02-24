@@ -1,1 +1,87 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras import layers
+from urllib.parse import unquote_to_bytes
+
+
+import time
+
+
+# your code...
+
+# example data
+data = [
+    { 'str':'foo=1', 'attack':0 },
+    { 'str':'foo=1%27%20OR%201=1%2D%2D', 'attack':1 }
+]
+
+#
+# Prepare Data
+#
+
+maxlen = 1024
+
+X = []
+Y = []
+
+def decode_query(str):
+    return unquote_to_bytes(str.replace('+',' '))
+
+for item in data:
+    arr = decode_query(item['str'])[:maxlen]
+    arrlen = len(arr)
+    seq = [0] * maxlen
+    for i in range(arrlen):
+        seq[maxlen - arrlen + i] = arr[i]
+    X.append(seq)
+    Y.append(item['attack'])
+
+#
+# Build Model (Simple LSTM)
+#
+
+model = tf.keras.Sequential([
+    layers.Input(shape=(maxlen,), batch_size=1),
+    layers.Embedding(256, 32),
+    layers.LSTM(16),
+    layers.Dense(1, activation='sigmoid')])
+
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+model.summary()
+
+#
+# Train Model
+#
+start = time.time()
+model.fit(np.asarray(X).astype(np.float32),
+          np.asarray(Y).astype(np.float32),
+          epochs=100, batch_size=1)
+end = time.time()
+print("training time", end - start) # time in seconds
+#
+# Save Model
+#
+
+export_archive = tf.keras.export.ExportArchive()
+export_archive.track(model)
+export_archive.add_endpoint(
+    name='serve',
+    fn=model.call,
+    input_signature=[tf.TensorSpec(shape=(1, maxlen), dtype=tf.float32)],
+)
+export_archive.write_out('model')
+
+converter = tf.lite.TFLiteConverter.from_saved_model('model')
+
+classifier_model = converter.convert()
+
+with open('classifier.model', 'wb') as f:
+    f.write(classifier_model)
+
+
+end = time.time()
+print(end - start) # time in seconds
