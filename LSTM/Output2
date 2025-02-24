@@ -1,0 +1,20 @@
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 252ms/step - accuracy: 1.0000 - loss: 3.4569e-04
+Epoch 100/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 244ms/step - accuracy: 1.0000 - loss: 3.3639e-04
+training time 541.6759915351868
+Saved artifact at 'model'. The following endpoints are available:
+
+* Endpoint 'serve'
+  inputs (POSITIONAL_OR_KEYWORD): TensorSpec(shape=(1, 1024), dtype=tf.float32, name=None)
+  training (POSITIONAL_OR_KEYWORD): Literal[None]
+  mask (POSITIONAL_OR_KEYWORD): Literal[None]
+Output Type:
+  TensorSpec(shape=(1, 1), dtype=tf.float32, name=None)
+Captures:
+  135126714627472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  135126714628624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  135126714624784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  135126714629392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  135126714627280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  135126714628048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+542.9966559410095
