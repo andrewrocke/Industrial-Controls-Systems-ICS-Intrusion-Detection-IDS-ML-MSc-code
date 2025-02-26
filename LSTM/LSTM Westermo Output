@@ -1,0 +1,19 @@
+267/267 ━━━━━━━━━━━━━━━━━━━━ 0s 1ms/step   
+Accuracy: 0.53
+Precision: 0.53
+Recall: 1.00
+F1 Score: 0.69
+Saved artifact at 'model'. The following endpoints are available:
+
+* Endpoint 'serve'
+  inputs (POSITIONAL_OR_KEYWORD): TensorSpec(shape=(1, 51), dtype=tf.float32, name=None)
+  training (POSITIONAL_OR_KEYWORD): Literal[None]
+  mask (POSITIONAL_OR_KEYWORD): Literal[None]
+Output Type:
+  TensorSpec(shape=(1, 1), dtype=tf.float32, name=None)
+Captures:
+  134050228498704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  134050228500624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  134050228500816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  134050228501584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+1.7160279750823975
