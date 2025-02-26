@@ -1,3 +1,5 @@
+Random Forest
+
 y_pred = (y_pred > 0.11).astype(int) # Assuming binary classification
 
 Predicited Results 
@@ -20,3 +22,243 @@ Accuracy: 0.55
 Precision: 0.33
 Recall: 0.25
 F1 Score: 0.29
+
+
+LSTM
+Model: "sequential_1"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ embedding_2 (Embedding)              │ (1, 1024, 32)               │           8,192 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 (LSTM)                        │ (1, 16)                     │           3,136 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 (Dense)                      │ (1, 1)                      │              17 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 11,345 (44.32 KB)
+ Trainable params: 11,345 (44.32 KB)
+ Non-trainable params: 0 (0.00 B)
+Epoch 1/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 231ms/step - accuracy: 0.6575 - loss: 0.6695
+Epoch 2/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 285ms/step - accuracy: 0.7645 - loss: 0.5062
+Epoch 3/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 232ms/step - accuracy: 0.6167 - loss: 0.3991
+Epoch 4/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 302ms/step - accuracy: 1.0000 - loss: 0.2204
+Epoch 5/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 230ms/step - accuracy: 1.0000 - loss: 0.2190
+Epoch 6/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 421ms/step - accuracy: 1.0000 - loss: 0.1421
+Epoch 7/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 229ms/step - accuracy: 1.0000 - loss: 0.0829
+Epoch 8/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 299ms/step - accuracy: 1.0000 - loss: 0.0728
+Epoch 9/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 270ms/step - accuracy: 1.0000 - loss: 0.0717
+Epoch 10/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 251ms/step - accuracy: 1.0000 - loss: 0.0882
+Epoch 11/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 228ms/step - accuracy: 1.0000 - loss: 0.0491
+Epoch 12/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 302ms/step - accuracy: 1.0000 - loss: 0.0686
+Epoch 13/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 306ms/step - accuracy: 1.0000 - loss: 0.0365
+Epoch 14/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 243ms/step - accuracy: 1.0000 - loss: 0.0220
+Epoch 15/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 230ms/step - accuracy: 1.0000 - loss: 0.0193
+Epoch 16/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 12s 569ms/step - accuracy: 1.0000 - loss: 0.0246
+Epoch 17/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 14s 228ms/step - accuracy: 1.0000 - loss: 0.0162
+Epoch 18/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 302ms/step - accuracy: 1.0000 - loss: 0.0147
+Epoch 19/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 234ms/step - accuracy: 1.0000 - loss: 0.0123
+Epoch 20/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 245ms/step - accuracy: 1.0000 - loss: 0.0139
+Epoch 21/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 228ms/step - accuracy: 1.0000 - loss: 0.0134
+Epoch 22/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 295ms/step - accuracy: 1.0000 - loss: 0.0074
+Epoch 23/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 232ms/step - accuracy: 1.0000 - loss: 0.0085
+Epoch 24/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 292ms/step - accuracy: 1.0000 - loss: 0.0121
+Epoch 25/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 230ms/step - accuracy: 1.0000 - loss: 0.0095
+Epoch 26/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 308ms/step - accuracy: 1.0000 - loss: 0.0060
+Epoch 27/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 228ms/step - accuracy: 1.0000 - loss: 0.0087
+Epoch 28/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 299ms/step - accuracy: 1.0000 - loss: 0.0046
+Epoch 29/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 241ms/step - accuracy: 1.0000 - loss: 0.0042
+Epoch 30/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 307ms/step - accuracy: 1.0000 - loss: 0.0044
+Epoch 31/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 285ms/step - accuracy: 1.0000 - loss: 0.0044
+Epoch 32/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 231ms/step - accuracy: 1.0000 - loss: 0.0050
+Epoch 33/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 230ms/step - accuracy: 1.0000 - loss: 0.0047
+Epoch 34/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 300ms/step - accuracy: 1.0000 - loss: 0.0047
+Epoch 35/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 301ms/step - accuracy: 1.0000 - loss: 0.0045
+Epoch 36/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 227ms/step - accuracy: 1.0000 - loss: 0.0031
+Epoch 37/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 315ms/step - accuracy: 1.0000 - loss: 0.0047
+Epoch 38/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 281ms/step - accuracy: 1.0000 - loss: 0.0028
+Epoch 39/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 243ms/step - accuracy: 1.0000 - loss: 0.0022
+Epoch 40/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 11s 298ms/step - accuracy: 1.0000 - loss: 0.0026
+Epoch 41/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 279ms/step - accuracy: 1.0000 - loss: 0.0020
+Epoch 42/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 223ms/step - accuracy: 1.0000 - loss: 0.0031
+Epoch 43/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 299ms/step - accuracy: 1.0000 - loss: 0.0025
+Epoch 44/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 257ms/step - accuracy: 1.0000 - loss: 0.0019
+Epoch 45/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 227ms/step - accuracy: 1.0000 - loss: 0.0025
+Epoch 46/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 294ms/step - accuracy: 1.0000 - loss: 0.0029
+Epoch 47/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 282ms/step - accuracy: 1.0000 - loss: 0.0024
+Epoch 48/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 246ms/step - accuracy: 1.0000 - loss: 0.0019
+Epoch 49/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 228ms/step - accuracy: 1.0000 - loss: 0.0019
+Epoch 50/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 298ms/step - accuracy: 1.0000 - loss: 0.0026
+Epoch 51/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 245ms/step - accuracy: 1.0000 - loss: 0.0013
+Epoch 52/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 223ms/step - accuracy: 1.0000 - loss: 0.0018
+Epoch 53/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 297ms/step - accuracy: 1.0000 - loss: 0.0017
+Epoch 54/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 228ms/step - accuracy: 1.0000 - loss: 0.0018
+Epoch 55/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 276ms/step - accuracy: 1.0000 - loss: 0.0012
+Epoch 56/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 257ms/step - accuracy: 1.0000 - loss: 0.0018
+Epoch 57/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 11s 305ms/step - accuracy: 1.0000 - loss: 0.0013
+Epoch 58/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 252ms/step - accuracy: 1.0000 - loss: 0.0013
+Epoch 59/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 226ms/step - accuracy: 1.0000 - loss: 0.0013
+Epoch 60/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 295ms/step - accuracy: 1.0000 - loss: 0.0012
+Epoch 61/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 229ms/step - accuracy: 1.0000 - loss: 9.8200e-04
+Epoch 62/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 294ms/step - accuracy: 1.0000 - loss: 0.0010    
+Epoch 63/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 223ms/step - accuracy: 1.0000 - loss: 0.0010
+Epoch 64/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 231ms/step - accuracy: 1.0000 - loss: 9.5457e-04
+Epoch 65/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 302ms/step - accuracy: 1.0000 - loss: 0.0011
+Epoch 66/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 224ms/step - accuracy: 1.0000 - loss: 9.9480e-04
+Epoch 67/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 300ms/step - accuracy: 1.0000 - loss: 0.0010
+Epoch 68/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 224ms/step - accuracy: 1.0000 - loss: 8.7242e-04
+Epoch 69/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 274ms/step - accuracy: 1.0000 - loss: 0.0013
+Epoch 70/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 223ms/step - accuracy: 1.0000 - loss: 9.2733e-04
+Epoch 71/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 298ms/step - accuracy: 1.0000 - loss: 7.7729e-04
+Epoch 72/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 242ms/step - accuracy: 1.0000 - loss: 6.1039e-04
+Epoch 73/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 231ms/step - accuracy: 1.0000 - loss: 7.7911e-04
+Epoch 74/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 298ms/step - accuracy: 1.0000 - loss: 7.2487e-04
+Epoch 75/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 222ms/step - accuracy: 1.0000 - loss: 8.4263e-04
+Epoch 76/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 281ms/step - accuracy: 1.0000 - loss: 8.2975e-04
+Epoch 77/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 230ms/step - accuracy: 1.0000 - loss: 8.9980e-04
+Epoch 78/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 301ms/step - accuracy: 1.0000 - loss: 6.0863e-04
+Epoch 79/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 226ms/step - accuracy: 1.0000 - loss: 6.6739e-04
+Epoch 80/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 296ms/step - accuracy: 1.0000 - loss: 8.3676e-04
+Epoch 81/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 226ms/step - accuracy: 1.0000 - loss: 6.3476e-04
+Epoch 82/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 7s 298ms/step - accuracy: 1.0000 - loss: 5.6833e-04
+Epoch 83/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 278ms/step - accuracy: 1.0000 - loss: 6.5311e-04
+Epoch 84/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 229ms/step - accuracy: 1.0000 - loss: 5.8766e-04
+Epoch 85/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 228ms/step - accuracy: 1.0000 - loss: 7.2187e-04
+Epoch 86/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 298ms/step - accuracy: 1.0000 - loss: 5.0795e-04
+Epoch 87/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 270ms/step - accuracy: 1.0000 - loss: 5.4118e-04
+Epoch 88/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 222ms/step - accuracy: 1.0000 - loss: 4.9852e-04
+Epoch 89/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 292ms/step - accuracy: 1.0000 - loss: 6.1342e-04
+Epoch 90/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 266ms/step - accuracy: 1.0000 - loss: 6.1980e-04
+Epoch 91/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 228ms/step - accuracy: 1.0000 - loss: 7.6294e-04
+Epoch 92/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 292ms/step - accuracy: 1.0000 - loss: 4.9833e-04
+Epoch 93/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 253ms/step - accuracy: 1.0000 - loss: 5.7713e-04
+Epoch 94/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 226ms/step - accuracy: 1.0000 - loss: 4.6749e-04
+Epoch 95/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 297ms/step - accuracy: 1.0000 - loss: 4.9935e-04
+Epoch 96/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 9s 260ms/step - accuracy: 1.0000 - loss: 6.1111e-04
+Epoch 97/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 10s 235ms/step - accuracy: 1.0000 - loss: 5.0447e-04
+Epoch 98/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 301ms/step - accuracy: 1.0000 - loss: 5.1516e-04
+Epoch 99/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 5s 228ms/step - accuracy: 1.0000 - loss: 3.3800e-04
+Epoch 100/100
+21/21 ━━━━━━━━━━━━━━━━━━━━ 6s 290ms/step - accuracy: 1.0000 - loss: 4.7473e-04
+training time 753.4497222900391
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 472ms/step
+Model accuracy: 1.0
+1/1 ━━━━━━━━━━━━━━━━━━━━ 2s 2s/step - accuracy: 1.0000 - loss: 3.5218e-04
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 296ms/step
+Accuracy: 1.00
+Precision: 1.00
+Recall: 1.00
+F1 Score: 1.00
+Saved artifact at 'model'. The following endpoints are available:
+
+* Endpoint 'serve'
+  inputs (POSITIONAL_OR_KEYWORD): TensorSpec(shape=(1, 1024), dtype=tf.float32, name=None)
+  training (POSITIONAL_OR_KEYWORD): Literal[None]
+  mask (POSITIONAL_OR_KEYWORD): Literal[None]
+Output Type:
+  TensorSpec(shape=(1, 1), dtype=tf.float32, name=None)
+Captures:
+  132387008992016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132387009003344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132387008998160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132387009001424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132387008991440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132387008991824: TensorSpec(shape=(), dtype=tf.resource, name=None)
