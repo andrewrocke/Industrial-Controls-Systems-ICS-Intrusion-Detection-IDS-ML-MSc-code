@@ -1,0 +1,22 @@
+y_pred = (y_pred > 0.11).astype(int) # Assuming binary classification
+
+Predicited Results 
+[[0.        ]
+ [0.13999994]
+ [0.07999999]
+ [0.07999999]
+ [0.        ]
+ [0.07999999]
+ [0.22999986]
+ [0.07999999]
+ [0.13999994]
+ [0.10666663]
+ [0.07999999]]
+
+Training
+[0 1 0 0 0 1 0 0 0 0]
+
+Accuracy: 0.55
+Precision: 0.33
+Recall: 0.25
+F1 Score: 0.29
