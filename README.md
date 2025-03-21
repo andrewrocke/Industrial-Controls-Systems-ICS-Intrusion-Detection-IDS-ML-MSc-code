@@ -23,5 +23,21 @@ The main Software, libraries version used in the project are shown in the diagra
 ![Setup](https://github.com/user-attachments/assets/a6aabedc-20d0-4747-a256-bcf25ee4b235)
 
 
-**Folder**
+**Folder Structure**
+
+The folders are decribed as below structure 
+
+- Dairy - Contains Supervisor meeting diarays in RTF and in PDF format.
+- LSTM - Contains code and results of the SQL Server esample and using the LSTM models with Westermo data, it contains some of the TFLite exported models.
+- ML Test - is a scratch pad working folder
+- ML - Is the main folder with the machine leraning implmentations
+  -   Colab - Contains a readme with some information about the notebooks. The TFDF Random Forest contain results in the reflevance folders and the code in the code folder. 
+  -  SkLearn - Contains Default code and code wusing the Hyperparamter Tuning Functions, each folder contains the results organinsed in the dataset folders.
+  - YDF - contains the rulseset contained in the dataset folder and it also contains the GradeintBooster Notebook containing a Gradeint booster noteput with code and results.    
+
+The files have the broad naiming convention
+
+Files named Output are the results of code either ran in Python or Notepaks ran in Google Colab
+
+Folders names Left, Right, Bottom contain reaults of using this datset file.
 
