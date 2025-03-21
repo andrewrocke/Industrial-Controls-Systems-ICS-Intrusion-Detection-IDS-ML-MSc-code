@@ -14,8 +14,5 @@ It uses an Industrial network traffic data set from [Westermo] (https://github.c
 The work evaluates [Snort3] (https://github.com/snort3/snort3) both from a signature-based and machine learning perspective 
 
 
-It bases the machine learning evaluation on the well described [snortmldocker] (https://github.com/ettorecalvi/snortml2docker)
-
-
-
-Link to the helpful section: [Link Text](#thisll-be-a-helpful-section-about-the-greek-letter-Θ).
+It bases the machine learning evaluation on the well described [snortmldocker (https://github.com/ettorecalvi/snortml2docker)
+](url)
