@@ -27,7 +27,7 @@ The main Software, libraries version used in the project are shown in the diagra
 
 The folders are decribed as below structure 
 
-- Dairy - Contains Supervisor meeting diarays in RTF and in PDF format.
+- Diary - Contains Supervisor meeting diarays in RTF and in PDF format.
 - LSTM - Contains code and results of the SQL Server esample and using the LSTM models with Westermo data, it contains some of the TFLite exported models.
 - ML Test - is a scratch pad working folder
 - ML - Is the main folder with the machine leraning implmentations
