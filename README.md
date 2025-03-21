@@ -14,4 +14,14 @@ It uses an Industrial network traffic data set from [Westermo](https://github.co
 The work evaluates [Snort3](https://github.com/snort3/snort3) both from a signature-based and machine learning perspective 
 
 
-It bases the machine learning evaluation on the well described [snortmldocker](https://github.com/ettorecalvi/snortml2docker)
+It basis the Snort machine learning evaluation on the well described [snortmldocker](https://github.com/ettorecalvi/snortml2docker)
+
+**Setup**
+
+The main Software, libraries version used in the project are shown in the diagram
+
+![Setup](https://github.com/user-attachments/assets/a6aabedc-20d0-4747-a256-bcf25ee4b235)
+
+
+**Folder**
+
