@@ -5,7 +5,7 @@
 This repository contains code and results produced while investigating machine learning for Intrusion Detection Systems (IDS) for Industrial Control Systems (ICS)
 The code experiments with 3 implementations of Random Forest Model using
 
-[YDF] (https://github.com/google/yggdrasil-decision-forests/)\
+[YDF] (https://github.com/google/yggdrasil-decision-forests/)
 [Scikit Learn] (https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 [TensorFlow] (https://www.tensorflow.org/decision_forests)
 
@@ -18,3 +18,4 @@ It bases the machine learning evaluation on the well described [snortmldocker] (
 
 
 
+Link to the helpful section: [Link Text](#thisll-be-a-helpful-section-about-the-greek-letter-Θ).
