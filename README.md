@@ -5,13 +5,11 @@
 This repository contains code and results produced while investigating machine learning for Intrusion Detection Systems (IDS) for Industrial Control Systems (ICS)
 The code experiments with 3 implementations of Random Forest Model using
 
-[YDF] (https://github.com/google/yggdrasil-decision-forests)
+[YDF] (https://github.com/google/yggdrasil-decision-forests/)
 [Scikit Learn] (https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 [TensorFlow] (https://www.tensorflow.org/decision_forests)
 
-It uses an Industrial network traffic data set from Westermo
-
-https://github.com/westermo/network-traffic-dataset
+It uses an Industrial network traffic data set from [Westermo] (https://github.com/westermo/network-traffic-dataset/)
 
 The work evaluates [Snort3] (https://github.com/snort3/snort3) both from a signature-based and machine learning perspective 
 
